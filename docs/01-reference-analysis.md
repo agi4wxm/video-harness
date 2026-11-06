@@ -50,7 +50,7 @@
 
 ### 3.2 L5 封闭词表（v0）
 
-不让 VLM 自由描述，只让它做选择题。词表会随分析积累扩充。
+不让 VLM 自由描述，只让它做选择题。词表会随分析积累扩充。**这套词表同时也是素材库的标签词表**（见 [03 §2](03-asset-library.md#2-统一清单assetyaml)），分析结果因此能直接检索到对应素材。
 
 ```yaml
 shot_type: [kinetic-text, stat-number, chart-bar, chart-line, chart-pie, comparison-split,
@@ -60,6 +60,7 @@ metaphor:  [growth-rise, decline-fall, contrast-split, accumulation-stack, flow-
             cause-effect-arrow, zoom-detail, reveal-mask, transform-morph, scale-compare, none]
 focal_position: [center, upper-third, lower-third, left, right, full-frame]
 emphasis_treatment: [color, scale, weight, underline-marker, box, motion-pop, none]
+cut_in: [hard-cut, match-cut, j-cut, l-cut, beat-cut, jump-cut, transition, breath]  # 进入本镜的方式
 concepts_per_shot: 1 | 2 | 3+
 visualized_words: [<文案中被画出来的词>]
 ```
@@ -73,9 +74,11 @@ analysis/<ref-set>/
     shots.json           # 切点、每镜 L2/L3 测量 + L5 标签
     contact/*.png        # 每镜拼图
   reference-profile.json # 跨视频聚合后的分布（风格）
-  recipes/*.md           # 镜头配方卡片
-  replicas/              # 标志性镜头的代码复刻，进入积木库
+  recipes/*.md           # 镜头配方卡片（草稿）
+  replicas/              # 标志性镜头的代码复刻（草稿）
 ```
+
+配方和复刻经 `recipe_add` / `asset_promote` 以 draft 级别进入素材库（`library/recipes/`、`library/blocks/` 等），之后按 [03 §4.2](03-asset-library.md#42-质量分级) 分级。剪辑手法（J-cut、匹配剪辑、卡点等）的识别结果同样沉淀为 `technique.edit` 素材。
 
 `reference-profile.json` 结构示意：
 
@@ -140,7 +143,7 @@ E1 不过关，后面全都不可信，所以 E1 先做。E2 是判断整套方�
 | `video_analyze` | 视频文件路径 | `measures.json`、`shots.json`、拼图（拼图以 image content 返回） |
 | `shots_label` | 拼图 + 文案 | 由客户端模型作答 L5 封闭词表，server 校验格式后写回 `shots.json` |
 | `profile_build` | 多个视频的分析结果 | `reference-profile.json` |
-| `recipe_add` | 配方内容 | 校验格式后写入 `recipes/` |
+| `recipe_add` | 配方内容 | 校验格式后以 draft 级别写入素材库 `library/recipes/` |
 | `reconstruct_eval` | 原视频 + 重建视频 | E2 各项距离 |
 
 ## 6. 待定事项

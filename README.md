@@ -29,8 +29,12 @@ harness 的价值集中在两件事上，它们是同一个闭环的两端：
 | 对外接口 | MCP Server（TypeScript） | 不绑定 agent；工作流说明、规范通过 MCP prompts/resources 暴露；截图以 image content 返回，供任意能看图的模型评审 |
 | 职责划分 | 创意交给 agent，流程与质量判定写在代码里 | 只靠 prompt 调度的流水线不可复现、难以续跑 |
 | 生成式镜头 | 少量，作为素材嵌入时间轴 | 预算闸门 + 内容哈希缓存 + 来源记录 |
+| 素材复用 | 统一素材库：媒体、代码组件、预设、手法、范例同一套清单 | 分析结果和好镜头都能沉淀回库，按使用数据分级 |
+| 测量与音频 | Python 子进程（JSON 进 / JSON 出） | 切点、OCR、ASR、光流等工具集中在 Python 生态；不常驻，靠缓存 |
 
 ## 文档
 
+- [docs/00-architecture.md](docs/00-architecture.md) —— 整体架构：分层、中间表示、状态机、分镜格式、仓库结构、构建顺序
 - [docs/01-reference-analysis.md](docs/01-reference-analysis.md) —— 参考视频分析：提取什么、怎么提取、怎么评估
 - [docs/02-quality-spec.md](docs/02-quality-spec.md) —— 质量规范：硬约束、工艺指标、评判清单，以及如何让 agent 达到
+- [docs/03-asset-library.md](docs/03-asset-library.md) —— 素材库：五大类素材、统一清单、入库处理、沉淀与分级、剪辑手法的表达与校验
