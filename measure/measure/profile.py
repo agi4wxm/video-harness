@@ -22,6 +22,7 @@ def _load(vdir: Path) -> dict | None:
             "measures": json.loads((vdir / "measures.json").read_text()),
             "shots": json.loads((vdir / "shots.json").read_text()),
             "ocr": json.loads((vdir / "ocr.json").read_text()),
+            "asr": json.loads((vdir / "asr.json").read_text()) if (vdir / "asr.json").exists() else None,
         }
     except FileNotFoundError:
         return None
@@ -49,13 +50,43 @@ def _count(xs) -> dict:
     return {k: round(v / tot, 3) for k, v in sorted(out.items(), key=lambda kv: -kv[1])}
 
 
+def _align_vs_random(vids: list[dict], seed: int = 0) -> dict:
+    """对齐是否显著：把实际边界到最近词 / 语句边界的距离，与同一视频内随机时刻的距离对比。
+    中文逐字时间戳很密，不和随机基线比较，"离词边界很近"没有意义。"""
+    rng = np.random.default_rng(seed)
+    real_w, rand_w, real_s, rand_s = [], [], [], []
+    for v in vids:
+        asr = v.get("asr")
+        if not asr or not asr.get("words"):
+            continue
+        wb = np.asarray(sorted({w["s"] for w in asr["words"]} | {w["e"] for w in asr["words"]}))
+        sb = np.asarray(sorted({x["s"] for x in asr["segments"]} | {x["e"] for x in asr["segments"]}))
+        ts = np.asarray([a["t"] for a in v["shots"]["align"]])
+        if not ts.size:
+            continue
+        rt = rng.uniform(asr["words"][0]["s"], asr["words"][-1]["e"], size=2000)
+        for arr, real, rand in ((wb, real_w, rand_w), (sb, real_s, rand_s)):
+            real += [float(np.min(np.abs(arr - t))) * 1000 for t in ts]
+            rand += [float(np.min(np.abs(arr - t))) * 1000 for t in rt]
+    if not real_w:
+        return None
+    return {
+        "to_word_ms": {"real": pct(real_w), "random": pct(rand_w)},
+        "to_phrase_ms": {"real": pct(real_s), "random": pct(rand_s)},
+        "phrase_alignment_gain": round(float(np.median(rand_s) / max(1e-6, np.median(real_s))), 2),
+        "note": "gain = 随机时刻中位距离 / 实际边界中位距离；≈1 表示没有对齐，>1.5 表示明显对齐",
+    }
+
+
 def _group_profile(vids: list[dict]) -> dict:
     M = [v["measures"] for v in vids]
     shots = [s for v in vids for s in v["shots"]["shots"]]
     segs = [g for v in vids for g in v["shots"].get("segments", [])]
     align = [a for v in vids for a in v["shots"]["align"]]
     ents = [e for v in vids for e in v["shots"]["entrances"] if e.get("ok")]
-    items = [it for v in vids for it in v["ocr"]["items"]]
+    ents_disp = [e for e in ents if e.get("method") == "displacement"]
+    # 只统计至少被 OCR 看到两次的条目，单次出现多为闪烁 / 误识别
+    items = [it for v in vids for it in v["ocr"]["items"] if it.get("n", 1) >= 2]
     caps = [it for it in items if it.get("kind") == "caption"]
     gfx = [it for it in items if it.get("kind") == "graphic"]
     labels = [g["label"] for g in segs if g.get("label")]
@@ -83,6 +114,7 @@ def _group_profile(vids: list[dict]) -> dict:
             "boundary_to_word_boundary_ms": pct([a["to_word_ms"] for a in align]),
             "boundary_to_segment_boundary_ms": pct([a["to_segment_ms"] for a in align]),
             "cut_in_pause_share": pct(vv(["L1", "cut_in_pause_share"])),
+            "alignment_vs_random": _align_vs_random(vids),
             "speech_chars_per_min": pct(vv(["L1", "speech", "chars_per_min"])),
             "speech_pauses_per_min": pct(vv(["L1", "speech", "pauses_per_min"])),
             "speech_lead_in_s": pct(vv(["L1", "speech", "lead_in_s"])),
@@ -123,8 +155,10 @@ def _group_profile(vids: list[dict]) -> dict:
                 "slide_ratio": pct([e["slide_ratio"] for e in ents if e["slide_ratio"] > 0.02], digits=4),
                 "slide_share": round(float(np.mean([e["slide_ratio"] > 0.02 for e in ents])), 3) if ents else None,
                 "slide_dirs": _count([e.get("slide_dir") for e in ents]),
-                "nearest_named": _count([e.get("nearest_named") for e in ents]),
-                "easing_clusters": _easing_clusters(ents),
+                "slide_dur_s": pct([e["dur_s"] for e in ents_disp]),
+                "slide_nearest_named": _count([e.get("nearest_named") for e in ents_disp]),
+                "slide_easing_clusters": _easing_clusters(ents_disp, k=2),
+                "note": "缓动只采用按位移拟合的滑入样本；按匹配分数拟合的（淡入等）曲线形状不可靠，仅用于时长",
             },
         },
         "audio": {
@@ -133,6 +167,7 @@ def _group_profile(vids: list[dict]) -> dict:
             "tempo_bpm": pct(vv(["L4", "tempo_bpm"])),
             "beat_confidence": pct(vv(["L4", "beat_confidence"])),
             "boundary_to_beat_ms": pct([a["to_beat_ms"] for a in align]),
+            "boundary_to_beat_random_ms": round(float(np.mean([15000 / b for b in vv(["L4", "tempo_bpm"]) if b])), 1),
         },
         "rhetoric": None if not labels else {
             "labeled_segments": len(labels),

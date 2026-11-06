@@ -38,3 +38,19 @@ harness 的价值集中在两件事上，它们是同一个闭环的两端：
 - [docs/01-reference-analysis.md](docs/01-reference-analysis.md) —— 参考视频分析：提取什么、怎么提取、怎么评估
 - [docs/02-quality-spec.md](docs/02-quality-spec.md) —— 质量规范：硬约束、工艺指标、评判清单，以及如何让 agent 达到
 - [docs/03-asset-library.md](docs/03-asset-library.md) —— 素材库：五大类素材、统一清单、入库处理、沉淀与分级、剪辑手法的表达与校验
+
+## 进展
+
+| 阶段 | 状态 | 产物 |
+|---|---|---|
+| 1. 测量内核 + 参考分析 | ✅ v0 | `measure/`、`server/`（MCP）、[analysis/chaping/REPORT.md](analysis/chaping/REPORT.md)、`analysis/chaping/reference-profile.json` |
+| 2. 素材库最小版 + 引擎最小版 | 待开始 | |
+
+### 运行 MCP server
+
+```bash
+pip install -e measure[openai]
+cd server && npm install && npm run build
+```
+
+在 MCP 客户端中配置：`{"command": "node", "args": ["<repo>/server/dist/index.js"]}`；工作流 prompt：`analyze-references`。

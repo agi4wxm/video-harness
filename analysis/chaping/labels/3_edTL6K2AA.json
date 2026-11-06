@@ -1,0 +1,1253 @@
+{
+ "video_id": "3_edTL6K2AA",
+ "annotator": "client-model (Claude), single pass",
+ "vocab": "server/src/vocab.ts",
+ "segments": [
+  {
+   "id": "g001",
+   "shot_id": "s001",
+   "start": 0,
+   "end": 1.167,
+   "boundary": "start",
+   "label": {
+    "shot_type": "kinetic-text",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "穷"
+    ],
+    "evidence_t": 0.58
+   }
+  },
+  {
+   "id": "g002",
+   "shot_id": "s001",
+   "start": 1.167,
+   "end": 2.967,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "kinetic-text",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "静电",
+     "穷"
+    ],
+    "evidence_t": 2.07,
+    "note": "标题卡：大字 + 闪电"
+   }
+  },
+  {
+   "id": "g003",
+   "shot_id": "s002",
+   "start": 2.967,
+   "end": 6.267,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "logo",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "motion-pop",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [],
+    "evidence_t": 4.62,
+    "note": "栏目片头：故障风 logo"
+   }
+  },
+  {
+   "id": "g004",
+   "shot_id": "s003",
+   "start": 6.267,
+   "end": 7.733,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "玻璃棒摩擦丝绸"
+    ],
+    "evidence_t": 7
+   }
+  },
+  {
+   "id": "g005",
+   "shot_id": "s004",
+   "start": 7.733,
+   "end": 9.167,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "铅笔擦头吸纸屑"
+    ],
+    "evidence_t": 8.45
+   }
+  },
+  {
+   "id": "g006",
+   "shot_id": "s005",
+   "start": 9.167,
+   "end": 11.3,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "实验"
+    ],
+    "evidence_t": 10.23
+   }
+  },
+  {
+   "id": "g007",
+   "shot_id": "s006",
+   "start": 11.3,
+   "end": 12.7,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "正电"
+    ],
+    "evidence_t": 12,
+    "note": "黑底单个正电荷符号"
+   }
+  },
+  {
+   "id": "g008",
+   "shot_id": "s006",
+   "start": 12.7,
+   "end": 14.9,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "正电",
+     "负电"
+    ],
+    "evidence_t": 13.8
+   }
+  },
+  {
+   "id": "g009",
+   "shot_id": "s006",
+   "start": 14.9,
+   "end": 17.567,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "互相平衡"
+    ],
+    "evidence_t": 16.23
+   }
+  },
+  {
+   "id": "g010",
+   "shot_id": "s006",
+   "start": 17.567,
+   "end": 21.067,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "flow-path",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "束缚不住电子"
+    ],
+    "evidence_t": 19.32
+   }
+  },
+  {
+   "id": "g011",
+   "shot_id": "s006",
+   "start": 21.067,
+   "end": 23.233,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "玻璃棒"
+    ],
+    "evidence_t": 22.15
+   }
+  },
+  {
+   "id": "g012",
+   "shot_id": "s006",
+   "start": 23.233,
+   "end": 24.6,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "玻璃棒",
+     "丝绸"
+    ],
+    "evidence_t": 23.92
+   }
+  },
+  {
+   "id": "g013",
+   "shot_id": "s006",
+   "start": 24.6,
+   "end": 26.167,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "flow-path",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "电子跑到丝绸上"
+    ],
+    "evidence_t": 25.38
+   }
+  },
+  {
+   "id": "g014",
+   "shot_id": "s006",
+   "start": 26.167,
+   "end": 30.267,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "正电荷",
+     "负电荷"
+    ],
+    "evidence_t": 28.22
+   }
+  },
+  {
+   "id": "g015",
+   "shot_id": "s006",
+   "start": 30.267,
+   "end": 33.933,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "静止状态"
+    ],
+    "evidence_t": 32.1
+   }
+  },
+  {
+   "id": "g016",
+   "shot_id": "s006",
+   "start": 33.933,
+   "end": 36.4,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "低电势"
+    ],
+    "evidence_t": 35.17
+   }
+  },
+  {
+   "id": "g017",
+   "shot_id": "s006",
+   "start": 36.4,
+   "end": 40.167,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "flow-path",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "电荷转移",
+     "高电势"
+    ],
+    "evidence_t": 38.28
+   }
+  },
+  {
+   "id": "g018",
+   "shot_id": "s006",
+   "start": 40.167,
+   "end": 43.3,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "box",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "绝缘体"
+    ],
+    "evidence_t": 41.73
+   }
+  },
+  {
+   "id": "g019",
+   "shot_id": "s006",
+   "start": 43.3,
+   "end": 44.6,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "按电梯"
+    ],
+    "evidence_t": 43.95
+   }
+  },
+  {
+   "id": "g020",
+   "shot_id": "s007",
+   "start": 44.6,
+   "end": 45.867,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "拉门把手"
+    ],
+    "evidence_t": 45.23
+   }
+  },
+  {
+   "id": "g021",
+   "shot_id": "s008",
+   "start": 45.867,
+   "end": 47.033,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "牵女友的手"
+    ],
+    "evidence_t": 46.45
+   }
+  },
+  {
+   "id": "g022",
+   "shot_id": "s009",
+   "start": 47.033,
+   "end": 49.333,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "flow-path",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "电流"
+    ],
+    "evidence_t": 48.18,
+    "note": "黑白手指间的电火花"
+   }
+  },
+  {
+   "id": "g023",
+   "shot_id": "s009",
+   "start": 49.333,
+   "end": 50.433,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "静电够多"
+    ],
+    "evidence_t": 49.88
+   }
+  },
+  {
+   "id": "g024",
+   "shot_id": "s010",
+   "start": 50.433,
+   "end": 51.433,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "闪光"
+    ],
+    "evidence_t": 50.93
+   }
+  },
+  {
+   "id": "g025",
+   "shot_id": "s011",
+   "start": 51.433,
+   "end": 53.033,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "针刺感"
+    ],
+    "evidence_t": 52.23
+   }
+  },
+  {
+   "id": "g026",
+   "shot_id": "s012",
+   "start": 53.033,
+   "end": 55.167,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "一瞬间"
+    ],
+    "evidence_t": 54.1
+   }
+  },
+  {
+   "id": "g027",
+   "shot_id": "s013",
+   "start": 55.167,
+   "end": 57.3,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "电荷不再转移"
+    ],
+    "evidence_t": 56.23
+   }
+  },
+  {
+   "id": "g028",
+   "shot_id": "s013",
+   "start": 57.3,
+   "end": 59.867,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [],
+    "evidence_t": 58.58
+   }
+  },
+  {
+   "id": "g029",
+   "shot_id": "s013",
+   "start": 59.867,
+   "end": 62.233,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "电场",
+     "等势体"
+    ],
+    "evidence_t": 61.05
+   }
+  },
+  {
+   "id": "g030",
+   "shot_id": "s013",
+   "start": 62.233,
+   "end": 64.6,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": "3+",
+    "cut_in": "transition",
+    "visualized_words": [
+     "能级跃迁"
+    ],
+    "evidence_t": 63.42
+   }
+  },
+  {
+   "id": "g031",
+   "shot_id": "s013",
+   "start": 64.6,
+   "end": 66.3,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": "3+",
+    "cut_in": "transition",
+    "visualized_words": [
+     "更好的解释"
+    ],
+    "evidence_t": 65.45
+   }
+  },
+  {
+   "id": "g032",
+   "shot_id": "s013",
+   "start": 66.3,
+   "end": 70.533,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "毛衣"
+    ],
+    "evidence_t": 68.42,
+    "note": "线框毛衣图形"
+   }
+  },
+  {
+   "id": "g033",
+   "shot_id": "s013",
+   "start": 70.533,
+   "end": 72.167,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "growth-rise",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "能级跃迁"
+    ],
+    "evidence_t": 71.35
+   }
+  },
+  {
+   "id": "g034",
+   "shot_id": "s013",
+   "start": 72.167,
+   "end": 74.267,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "光子"
+    ],
+    "evidence_t": 73.22
+   }
+  },
+  {
+   "id": "g035",
+   "shot_id": "s013",
+   "start": 74.267,
+   "end": 77.967,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "reveal-mask",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "紫光"
+    ],
+    "evidence_t": 76.12
+   }
+  },
+  {
+   "id": "g036",
+   "shot_id": "s013",
+   "start": 77.967,
+   "end": 82,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "box",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "高能离子"
+    ],
+    "evidence_t": 79.98
+   }
+  },
+  {
+   "id": "g037",
+   "shot_id": "s013",
+   "start": 82,
+   "end": 84.433,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "kinetic-text",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "原理"
+    ],
+    "evidence_t": 83.22
+   }
+  },
+  {
+   "id": "g038",
+   "shot_id": "s013",
+   "start": 84.433,
+   "end": 85.933,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "冬天"
+    ],
+    "evidence_t": 85.18
+   }
+  },
+  {
+   "id": "g039",
+   "shot_id": "s014",
+   "start": 85.933,
+   "end": 88.133,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "电穷人"
+    ],
+    "evidence_t": 87.03
+   }
+  },
+  {
+   "id": "g040",
+   "shot_id": "s015",
+   "start": 88.133,
+   "end": 91.667,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "夏天"
+    ],
+    "evidence_t": 89.9
+   }
+  },
+  {
+   "id": "g041",
+   "shot_id": "s015",
+   "start": 91.667,
+   "end": 99.9,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "cause-effect-arrow",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "水分子",
+     "中和"
+    ],
+    "evidence_t": 95.78
+   }
+  },
+  {
+   "id": "g042",
+   "shot_id": "s015",
+   "start": 99.9,
+   "end": 104.067,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "空气"
+    ],
+    "evidence_t": 101.98
+   }
+  },
+  {
+   "id": "g043",
+   "shot_id": "s016",
+   "start": 104.067,
+   "end": 105.233,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "火花带闪电"
+    ],
+    "evidence_t": 104.65
+   }
+  },
+  {
+   "id": "g044",
+   "shot_id": "s017",
+   "start": 105.233,
+   "end": 108.8,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "涂润肤露"
+    ],
+    "evidence_t": 107.02
+   }
+  },
+  {
+   "id": "g045",
+   "shot_id": "s018",
+   "start": 108.8,
+   "end": 111.333,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "加湿器"
+    ],
+    "evidence_t": 110.07
+   }
+  },
+  {
+   "id": "g046",
+   "shot_id": "s018",
+   "start": 111.333,
+   "end": 114.733,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "list",
+    "metaphor": "contrast-split",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": "3+",
+    "cut_in": "transition",
+    "visualized_words": [
+     "纯棉",
+     "羊毛",
+     "麻"
+    ],
+    "evidence_t": 113.03,
+    "note": "三格纹理图堆叠 + 大字标签"
+   }
+  },
+  {
+   "id": "g047",
+   "shot_id": "s018",
+   "start": 114.733,
+   "end": 116.9,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "color",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "防静电"
+    ],
+    "evidence_t": 115.82,
+    "note": "实拍上叠加成分标签"
+   }
+  },
+  {
+   "id": "g048",
+   "shot_id": "s018",
+   "start": 116.9,
+   "end": 122.9,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "面料"
+    ],
+    "evidence_t": 119.9
+   }
+  },
+  {
+   "id": "g049",
+   "shot_id": "s018",
+   "start": 122.9,
+   "end": 124.333,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "材质"
+    ],
+    "evidence_t": 123.62
+   }
+  },
+  {
+   "id": "g050",
+   "shot_id": "s018",
+   "start": 124.333,
+   "end": 126.5,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "合成纤维"
+    ],
+    "evidence_t": 125.42
+   }
+  },
+  {
+   "id": "g051",
+   "shot_id": "s019",
+   "start": 126.5,
+   "end": 131.233,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 2,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "极性基团"
+    ],
+    "evidence_t": 128.87
+   }
+  },
+  {
+   "id": "g052",
+   "shot_id": "s019",
+   "start": 131.233,
+   "end": 137.667,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "box",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "保湿性",
+     "导电性"
+    ],
+    "evidence_t": 134.45
+   }
+  },
+  {
+   "id": "g053",
+   "shot_id": "s019",
+   "start": 137.667,
+   "end": 141.933,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "diagram",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "box",
+    "concepts_per_shot": 2,
+    "cut_in": "transition",
+    "visualized_words": [
+     "尼龙",
+     "腈纶"
+    ],
+    "evidence_t": 139.8,
+    "note": "人物抠图 + 标签"
+   }
+  },
+  {
+   "id": "g054",
+   "shot_id": "s019",
+   "start": 141.933,
+   "end": 144.9,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "kinetic-text",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "减少静电方法"
+    ],
+    "evidence_t": 143.42
+   }
+  },
+  {
+   "id": "g055",
+   "shot_id": "s020",
+   "start": 144.9,
+   "end": 146.6,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "鞋底接地"
+    ],
+    "evidence_t": 145.75
+   }
+  },
+  {
+   "id": "g056",
+   "shot_id": "s021",
+   "start": 146.6,
+   "end": 148.733,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "3d-object",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "scale",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "全金属钥匙"
+    ],
+    "evidence_t": 147.67
+   }
+  },
+  {
+   "id": "g057",
+   "shot_id": "s021",
+   "start": 148.733,
+   "end": 152.867,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "钥匙按电梯"
+    ],
+    "evidence_t": 150.8
+   }
+  },
+  {
+   "id": "g058",
+   "shot_id": "s021",
+   "start": 152.867,
+   "end": 155.3,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [],
+    "evidence_t": 154.08
+   }
+  },
+  {
+   "id": "g059",
+   "shot_id": "s022",
+   "start": 155.3,
+   "end": 157.967,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "手机"
+    ],
+    "evidence_t": 156.63
+   }
+  },
+  {
+   "id": "g060",
+   "shot_id": "s022",
+   "start": 157.967,
+   "end": 160.433,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [],
+    "evidence_t": 159.2
+   }
+  },
+  {
+   "id": "g061",
+   "shot_id": "s022",
+   "start": 160.433,
+   "end": 163.4,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "先用手掌"
+    ],
+    "evidence_t": 161.92
+   }
+  },
+  {
+   "id": "g062",
+   "shot_id": "s022",
+   "start": 163.4,
+   "end": 165.433,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "门把手"
+    ],
+    "evidence_t": 164.42
+   }
+  },
+  {
+   "id": "g063",
+   "shot_id": "s022",
+   "start": 165.433,
+   "end": 167.267,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "live-footage",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [],
+    "evidence_t": 166.35
+   }
+  },
+  {
+   "id": "g064",
+   "shot_id": "s023",
+   "start": 167.267,
+   "end": 169.233,
+   "boundary": "cut",
+   "label": {
+    "shot_type": "other",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "none",
+    "concepts_per_shot": 1,
+    "cut_in": "hard-cut",
+    "visualized_words": [
+     "寒冷干燥的室外"
+    ],
+    "evidence_t": 168.25,
+    "note": "人物抠图 + 城市背景，面部遮挡"
+   }
+  },
+  {
+   "id": "g065",
+   "shot_id": "s023",
+   "start": 169.233,
+   "end": 172.554,
+   "boundary": "beat",
+   "label": {
+    "shot_type": "other",
+    "metaphor": "none",
+    "focal_position": "center",
+    "emphasis_treatment": "motion-pop",
+    "concepts_per_shot": 1,
+    "cut_in": "transition",
+    "visualized_words": [
+     "别碰我"
+    ],
+    "evidence_t": 170.89,
+    "note": "结尾梗：大字弹出"
+   }
+  }
+ ]
+}

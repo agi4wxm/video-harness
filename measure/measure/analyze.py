@@ -163,7 +163,8 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
 
     # ---- 视频级汇总
     speech_span = (words[-1]["e"] - words[0]["s"]) if words else None
-    graphic = [it for it in items if it["kind"] == "graphic"]
+    # 只统计至少被 OCR 看到两次的画面文字，单次出现多为闪烁 / 误识别
+    graphic = [it for it in items if it["kind"] == "graphic" and it.get("n", 1) >= 2]
     captions = [it for it in items if it["kind"] == "caption"]
     persistent = [it for it in items if it["kind"] == "persistent"]
     graphic_lines = lines_on_screen(samples, items, "graphic")

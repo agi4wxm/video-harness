@@ -1,0 +1,1005 @@
+{
+  "schema": "0.1.0",
+  "source": {
+    "author": "差评君（竖屏）+ vibe-motion hoverslam（横屏）",
+    "n_videos": 5
+  },
+  "by_aspect": {
+    "9:16": {
+      "videos": [
+        "3_edTL6K2AA",
+        "Ojyr4LwgpK8",
+        "ZPAbb-wHk1Y",
+        "jbsEd1jFV9Y"
+      ],
+      "duration_s": {
+        "p10": 157.056,
+        "p50": 175.254,
+        "p90": 179.214,
+        "mean": 170.169,
+        "n": 4
+      },
+      "rhythm": {
+        "shot_duration_s": {
+          "p10": 1.06,
+          "p50": 3.26,
+          "p90": 16.437,
+          "mean": 6.188,
+          "n": 110
+        },
+        "cuts_per_min": {
+          "p10": 7.251,
+          "p50": 8.215,
+          "p90": 12.217,
+          "mean": 9.3,
+          "n": 4
+        },
+        "first_cut_s": {
+          "p10": 4.067,
+          "p50": 7.767,
+          "p90": 9.32,
+          "mean": 7.0,
+          "n": 4
+        },
+        "segment_duration_s": {
+          "p10": 1.047,
+          "p50": 2.4,
+          "p90": 4.407,
+          "mean": 2.745,
+          "n": 248
+        },
+        "boundaries_per_min": {
+          "p10": 19.438,
+          "p50": 21.495,
+          "p90": 23.496,
+          "mean": 21.475,
+          "n": 4
+        },
+        "segments_per_shot": {
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 5.0,
+          "mean": 2.255,
+          "n": 110
+        },
+        "cut_to_word_boundary_ms": {
+          "p10": 13.0,
+          "p50": 67.0,
+          "p90": 136.5,
+          "mean": 68.896,
+          "n": 106
+        },
+        "boundary_to_word_boundary_ms": {
+          "p10": 7.0,
+          "p50": 60.0,
+          "p90": 133.0,
+          "mean": 65.004,
+          "n": 244
+        },
+        "boundary_to_segment_boundary_ms": {
+          "p10": 47.0,
+          "p50": 307.0,
+          "p90": 811.2,
+          "mean": 378.143,
+          "n": 244
+        },
+        "cut_in_pause_share": {
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.034,
+          "mean": 0.012,
+          "n": 4
+        },
+        "alignment_vs_random": {
+          "to_word_ms": {
+            "real": {
+              "p10": 7.0,
+              "p50": 60.0,
+              "p90": 133.0,
+              "mean": 65.004,
+              "n": 244
+            },
+            "random": {
+              "p10": 9.519,
+              "p50": 49.679,
+              "p90": 124.72,
+              "mean": 60.221,
+              "n": 8000
+            }
+          },
+          "to_phrase_ms": {
+            "real": {
+              "p10": 47.0,
+              "p50": 307.0,
+              "p90": 811.2,
+              "mean": 378.143,
+              "n": 244
+            },
+            "random": {
+              "p10": 70.252,
+              "p50": 411.018,
+              "p90": 926.593,
+              "mean": 462.451,
+              "n": 8000
+            }
+          },
+          "phrase_alignment_gain": 1.34,
+          "note": "gain = 随机时刻中位距离 / 实际边界中位距离；≈1 表示没有对齐，>1.5 表示明显对齐"
+        },
+        "speech_chars_per_min": {
+          "p10": 331.75,
+          "p50": 339.7,
+          "p90": 350.94,
+          "mean": 340.875,
+          "n": 4
+        },
+        "speech_pauses_per_min": {
+          "p10": 1.21,
+          "p50": 1.7,
+          "p90": 3.03,
+          "mean": 2.0,
+          "n": 4
+        },
+        "speech_lead_in_s": {
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "mean": 0.0,
+          "n": 4
+        }
+      },
+      "visual": {
+        "layout": {
+          "templated_share": 1.0,
+          "content_box": [
+            [
+              0.0556,
+              0.1693,
+              0.9398,
+              0.6198
+            ],
+            [
+              0.0556,
+              0.1667,
+              0.9398,
+              0.6198
+            ],
+            [
+              0.0556,
+              0.1693,
+              0.9398,
+              0.6198
+            ],
+            [
+              0.0556,
+              0.1667,
+              0.9398,
+              0.6198
+            ]
+          ],
+          "content_area_ratio": {
+            "p10": 0.398,
+            "p50": 0.4,
+            "p90": 0.401,
+            "mean": 0.4,
+            "n": 4
+          }
+        },
+        "palette": [
+          {
+            "hex": "#0F1011",
+            "share": 0.416,
+            "L": 0.172,
+            "C": 0.002
+          },
+          {
+            "hex": "#F8F9F8",
+            "share": 0.186,
+            "L": 0.981,
+            "C": 0.002
+          },
+          {
+            "hex": "#000000",
+            "share": 0.113,
+            "L": 0.01,
+            "C": 0.0
+          },
+          {
+            "hex": "#A5BBA7",
+            "share": 0.091,
+            "L": 0.769,
+            "C": 0.037
+          },
+          {
+            "hex": "#50504D",
+            "share": 0.07,
+            "L": 0.429,
+            "C": 0.005
+          },
+          {
+            "hex": "#85807D",
+            "share": 0.06,
+            "L": 0.602,
+            "C": 0.008
+          },
+          {
+            "hex": "#323235",
+            "share": 0.058,
+            "L": 0.318,
+            "C": 0.005
+          },
+          {
+            "hex": "#2452C4",
+            "share": 0.005,
+            "L": 0.481,
+            "C": 0.185
+          }
+        ],
+        "frame_L_mean": {
+          "p10": 0.306,
+          "p50": 0.405,
+          "p90": 0.541,
+          "mean": 0.421,
+          "n": 248
+        },
+        "frame_C_mean": {
+          "p10": 0.006,
+          "p50": 0.012,
+          "p90": 0.026,
+          "mean": 0.015,
+          "n": 248
+        },
+        "caption": {
+          "h_ratio": {
+            "p10": 0.025,
+            "p50": 0.028,
+            "p90": 0.034,
+            "mean": 0.032,
+            "n": 504
+          },
+          "center_y": {
+            "p10": 0.368,
+            "p50": 0.656,
+            "p90": 0.658,
+            "mean": 0.606,
+            "n": 504
+          },
+          "chars_per_line": {
+            "p10": 4.0,
+            "p50": 9.0,
+            "p90": 13.0,
+            "mean": 8.756,
+            "n": 504
+          },
+          "hold_s": {
+            "p10": 1.0,
+            "p50": 1.5,
+            "p90": 3.0,
+            "mean": 1.946,
+            "n": 504
+          }
+        },
+        "graphic_text": {
+          "h_ratio": {
+            "p10": 0.01,
+            "p50": 0.019,
+            "p90": 0.034,
+            "mean": 0.024,
+            "n": 806
+          },
+          "chars_per_line": {
+            "p10": 3.0,
+            "p50": 7.0,
+            "p90": 40.0,
+            "mean": 14.717,
+            "n": 806
+          },
+          "hold_s": {
+            "p10": 1.0,
+            "p50": 1.5,
+            "p90": 6.5,
+            "mean": 2.871,
+            "n": 806
+          },
+          "hold_vs_reading": {
+            "p10": 0.389,
+            "p50": 1.25,
+            "p90": 5.0,
+            "mean": 2.314,
+            "n": 806
+          },
+          "groups_on_screen_p90": {
+            "p10": 2.3,
+            "p50": 4.0,
+            "p90": 5.0,
+            "mean": 3.75,
+            "n": 4
+          },
+          "share_time_with_graphic_text": {
+            "p10": 0.784,
+            "p50": 0.831,
+            "p90": 0.846,
+            "mean": 0.82,
+            "n": 4
+          }
+        }
+      },
+      "motion": {
+        "flow_mean": {
+          "p10": 0.0261,
+          "p50": 0.0918,
+          "p90": 0.2715,
+          "mean": 0.1244,
+          "n": 110
+        },
+        "static_max_s": {
+          "p10": 2.74,
+          "p50": 3.55,
+          "p90": 8.84,
+          "mean": 5.15,
+          "n": 4
+        },
+        "motion_speech_corr": {
+          "p10": 0.012,
+          "p50": 0.073,
+          "p90": 0.116,
+          "mean": 0.066,
+          "n": 4
+        },
+        "entrance": {
+          "n": 140,
+          "dur_s": {
+            "p10": 0.0,
+            "p50": 0.433,
+            "p90": 1.2,
+            "mean": 0.544,
+            "n": 140
+          },
+          "dur_10_90_s": {
+            "p10": 0.0,
+            "p50": 0.233,
+            "p90": 0.903,
+            "mean": 0.312,
+            "n": 140
+          },
+          "pop_share": 0.293,
+          "slide_ratio": {
+            "p10": 0.0818,
+            "p50": 0.1892,
+            "p90": 0.2774,
+            "mean": 0.1865,
+            "n": 112
+          },
+          "slide_share": 0.8,
+          "slide_dirs": {
+            "from-bottom": 0.347,
+            "from-top": 0.254,
+            "from-left": 0.229,
+            "from-right": 0.169
+          },
+          "slide_dur_s": {
+            "p10": 0.0,
+            "p50": 0.433,
+            "p90": 1.167,
+            "mean": 0.535,
+            "n": 112
+          },
+          "slide_nearest_named": {
+            "ease-in": 0.35,
+            "out-cubic": 0.212,
+            "ease-out": 0.175,
+            "ease": 0.1,
+            "ease-in-out": 0.062,
+            "out-expo": 0.062,
+            "linear": 0.037
+          },
+          "slide_easing_clusters": [
+            {
+              "bezier": [
+                0.365,
+                0.6,
+                0.432,
+                0.774
+              ],
+              "share": 0.731
+            },
+            {
+              "bezier": [
+                1.0,
+                0.112,
+                0.853,
+                0.028
+              ],
+              "share": 0.269
+            }
+          ],
+          "note": "缓动只采用按位移拟合的滑入样本；按匹配分数拟合的（淡入等）曲线形状不可靠，仅用于时长"
+        }
+      },
+      "audio": {
+        "integrated_lufs": {
+          "p10": -16.044,
+          "p50": -14.415,
+          "p90": -13.682,
+          "mean": -14.735,
+          "n": 4
+        },
+        "true_peak_dbtp": {
+          "p10": -1.32,
+          "p50": -0.58,
+          "p90": -0.057,
+          "mean": -0.657,
+          "n": 4
+        },
+        "tempo_bpm": {
+          "p10": 108.34,
+          "p50": 129.2,
+          "p90": 133.96,
+          "mean": 123.45,
+          "n": 4
+        },
+        "beat_confidence": {
+          "p10": 3.186,
+          "p50": 3.415,
+          "p90": 3.49,
+          "mean": 3.36,
+          "n": 4
+        },
+        "boundary_to_beat_ms": {
+          "p10": 21.3,
+          "p50": 101.5,
+          "p90": 220.0,
+          "mean": 113.98,
+          "n": 244
+        },
+        "boundary_to_beat_random_ms": 123.3
+      },
+      "rhetoric": {
+        "labeled_segments": 65,
+        "shot_type_share": {
+          "live-footage": 0.462,
+          "diagram": 0.4,
+          "kinetic-text": 0.062,
+          "other": 0.031,
+          "logo": 0.015,
+          "list": 0.015,
+          "3d-object": 0.015
+        },
+        "metaphor_share": {
+          "none": 0.8,
+          "contrast-split": 0.092,
+          "flow-path": 0.062,
+          "growth-rise": 0.015,
+          "reveal-mask": 0.015,
+          "cause-effect-arrow": 0.015
+        },
+        "cut_in_share": {
+          "transition": 0.646,
+          "hard-cut": 0.354
+        },
+        "emphasis_share": {
+          "none": 0.708,
+          "scale": 0.185,
+          "box": 0.062,
+          "motion-pop": 0.031,
+          "color": 0.015
+        }
+      },
+      "measurement_quality": {
+        "3_edTL6K2AA": {
+          "loudness_crosscheck_delta_lu": -0.02,
+          "caption_ocr_vs_asr": {
+            "n_captions": 150,
+            "char_agreement_mean": 0.904
+          },
+          "cut_candidates_rejected": 37
+        },
+        "Ojyr4LwgpK8": {
+          "loudness_crosscheck_delta_lu": -0.07,
+          "caption_ocr_vs_asr": {
+            "n_captions": 139,
+            "char_agreement_mean": 0.932
+          },
+          "cut_candidates_rejected": 34
+        },
+        "ZPAbb-wHk1Y": {
+          "loudness_crosscheck_delta_lu": -0.01,
+          "caption_ocr_vs_asr": {
+            "n_captions": 145,
+            "char_agreement_mean": 0.903
+          },
+          "cut_candidates_rejected": 44
+        },
+        "jbsEd1jFV9Y": {
+          "loudness_crosscheck_delta_lu": -0.04,
+          "caption_ocr_vs_asr": {
+            "n_captions": 120,
+            "char_agreement_mean": 0.947
+          },
+          "cut_candidates_rejected": 48
+        }
+      }
+    },
+    "16:9": {
+      "videos": [
+        "WReBvXwbSt8"
+      ],
+      "duration_s": {
+        "p10": 171.974,
+        "p50": 171.974,
+        "p90": 171.974,
+        "mean": 171.974,
+        "n": 1
+      },
+      "rhythm": {
+        "shot_duration_s": {
+          "p10": 0.433,
+          "p50": 2.383,
+          "p90": 14.76,
+          "mean": 6.142,
+          "n": 28
+        },
+        "cuts_per_min": {
+          "p10": 9.42,
+          "p50": 9.42,
+          "p90": 9.42,
+          "mean": 9.42,
+          "n": 1
+        },
+        "first_cut_s": {
+          "p10": 3.1,
+          "p50": 3.1,
+          "p90": 3.1,
+          "mean": 3.1,
+          "n": 1
+        },
+        "segment_duration_s": {
+          "p10": 0.467,
+          "p50": 2.167,
+          "p90": 4.887,
+          "mean": 2.915,
+          "n": 59
+        },
+        "boundaries_per_min": {
+          "p10": 20.24,
+          "p50": 20.24,
+          "p90": 20.24,
+          "mean": 20.24,
+          "n": 1
+        },
+        "segments_per_shot": {
+          "p10": 1.0,
+          "p50": 1.0,
+          "p90": 5.0,
+          "mean": 2.107,
+          "n": 28
+        },
+        "cut_to_word_boundary_ms": {
+          "p10": 20.0,
+          "p50": 127.0,
+          "p90": 2387.0,
+          "mean": 826.704,
+          "n": 27
+        },
+        "boundary_to_word_boundary_ms": {
+          "p10": 20.0,
+          "p50": 100.0,
+          "p90": 2211.0,
+          "mean": 640.483,
+          "n": 58
+        },
+        "boundary_to_segment_boundary_ms": {
+          "p10": 84.9,
+          "p50": 326.5,
+          "p90": 2211.0,
+          "mean": 783.621,
+          "n": 58
+        },
+        "cut_in_pause_share": {
+          "p10": 0.407,
+          "p50": 0.407,
+          "p90": 0.407,
+          "mean": 0.407,
+          "n": 1
+        },
+        "alignment_vs_random": {
+          "to_word_ms": {
+            "real": {
+              "p10": 20.0,
+              "p50": 100.0,
+              "p90": 2211.0,
+              "mean": 640.483,
+              "n": 58
+            },
+            "random": {
+              "p10": 10.599,
+              "p50": 65.84,
+              "p90": 1258.883,
+              "mean": 399.007,
+              "n": 2000
+            }
+          },
+          "to_phrase_ms": {
+            "real": {
+              "p10": 84.9,
+              "p50": 326.5,
+              "p90": 2211.0,
+              "mean": 783.621,
+              "n": 58
+            },
+            "random": {
+              "p10": 67.52,
+              "p50": 374.764,
+              "p90": 1260.554,
+              "mean": 659.585,
+              "n": 2000
+            }
+          },
+          "phrase_alignment_gain": 1.15,
+          "note": "gain = 随机时刻中位距离 / 实际边界中位距离；≈1 表示没有对齐，>1.5 表示明显对齐"
+        },
+        "speech_chars_per_min": {
+          "p10": 274.5,
+          "p50": 274.5,
+          "p90": 274.5,
+          "mean": 274.5,
+          "n": 1
+        },
+        "speech_pauses_per_min": {
+          "p10": 3.2,
+          "p50": 3.2,
+          "p90": 3.2,
+          "mean": 3.2,
+          "n": 1
+        },
+        "speech_lead_in_s": {
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "mean": 0.0,
+          "n": 1
+        }
+      },
+      "visual": {
+        "layout": {
+          "templated_share": 0.0,
+          "content_box": [
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "content_area_ratio": {
+            "p10": 1.0,
+            "p50": 1.0,
+            "p90": 1.0,
+            "mean": 1.0,
+            "n": 1
+          }
+        },
+        "palette": [
+          {
+            "hex": "#53565C",
+            "share": 0.252,
+            "L": 0.453,
+            "C": 0.01
+          },
+          {
+            "hex": "#0D1014",
+            "share": 0.206,
+            "L": 0.173,
+            "C": 0.009
+          },
+          {
+            "hex": "#91ACC8",
+            "share": 0.133,
+            "L": 0.735,
+            "C": 0.051
+          },
+          {
+            "hex": "#252D2F",
+            "share": 0.112,
+            "L": 0.292,
+            "C": 0.012
+          },
+          {
+            "hex": "#768495",
+            "share": 0.095,
+            "L": 0.607,
+            "C": 0.031
+          },
+          {
+            "hex": "#D0CDC3",
+            "share": 0.086,
+            "L": 0.847,
+            "C": 0.013
+          },
+          {
+            "hex": "#010306",
+            "share": 0.074,
+            "L": 0.092,
+            "C": 0.018
+          },
+          {
+            "hex": "#F2F1F1",
+            "share": 0.042,
+            "L": 0.959,
+            "C": 0.001
+          }
+        ],
+        "frame_L_mean": {
+          "p10": 0.191,
+          "p50": 0.496,
+          "p90": 0.697,
+          "mean": 0.458,
+          "n": 59
+        },
+        "frame_C_mean": {
+          "p10": 0.012,
+          "p50": 0.023,
+          "p90": 0.06,
+          "mean": 0.029,
+          "n": 59
+        },
+        "caption": {
+          "h_ratio": {
+            "p10": 0.039,
+            "p50": 0.05,
+            "p90": 0.067,
+            "mean": 0.056,
+            "n": 120
+          },
+          "center_y": {
+            "p10": 0.267,
+            "p50": 0.895,
+            "p90": 0.897,
+            "mean": 0.69,
+            "n": 120
+          },
+          "chars_per_line": {
+            "p10": 3.0,
+            "p50": 7.0,
+            "p90": 17.1,
+            "mean": 9.467,
+            "n": 120
+          },
+          "hold_s": {
+            "p10": 1.0,
+            "p50": 2.5,
+            "p90": 5.0,
+            "mean": 3.054,
+            "n": 120
+          }
+        },
+        "graphic_text": {
+          "h_ratio": {
+            "p10": 0.033,
+            "p50": 0.046,
+            "p90": 0.082,
+            "mean": 0.055,
+            "n": 209
+          },
+          "chars_per_line": {
+            "p10": 2.0,
+            "p50": 4.0,
+            "p90": 14.2,
+            "mean": 7.799,
+            "n": 209
+          },
+          "hold_s": {
+            "p10": 1.0,
+            "p50": 2.0,
+            "p90": 5.5,
+            "mean": 3.005,
+            "n": 209
+          },
+          "hold_vs_reading": {
+            "p10": 0.778,
+            "p50": 2.5,
+            "p90": 6.25,
+            "mean": 3.076,
+            "n": 209
+          },
+          "groups_on_screen_p90": {
+            "p10": 3.0,
+            "p50": 3.0,
+            "p90": 3.0,
+            "mean": 3.0,
+            "n": 1
+          },
+          "share_time_with_graphic_text": {
+            "p10": 0.817,
+            "p50": 0.817,
+            "p90": 0.817,
+            "mean": 0.817,
+            "n": 1
+          }
+        }
+      },
+      "motion": {
+        "flow_mean": {
+          "p10": 0.0267,
+          "p50": 0.1315,
+          "p90": 0.5345,
+          "mean": 0.2784,
+          "n": 28
+        },
+        "static_max_s": {
+          "p10": 3.4,
+          "p50": 3.4,
+          "p90": 3.4,
+          "mean": 3.4,
+          "n": 1
+        },
+        "motion_speech_corr": {
+          "p10": 0.005,
+          "p50": 0.005,
+          "p90": 0.005,
+          "mean": 0.005,
+          "n": 1
+        },
+        "entrance": {
+          "n": 49,
+          "dur_s": {
+            "p10": 0.0,
+            "p50": 0.167,
+            "p90": 1.133,
+            "mean": 0.329,
+            "n": 49
+          },
+          "dur_10_90_s": {
+            "p10": 0.0,
+            "p50": 0.067,
+            "p90": 0.714,
+            "mean": 0.215,
+            "n": 49
+          },
+          "pop_share": 0.429,
+          "slide_ratio": {
+            "p10": 0.0715,
+            "p50": 0.1448,
+            "p90": 0.2288,
+            "mean": 0.1498,
+            "n": 37
+          },
+          "slide_share": 0.755,
+          "slide_dirs": {
+            "from-right": 0.342,
+            "from-bottom": 0.289,
+            "from-left": 0.211,
+            "from-top": 0.158
+          },
+          "slide_dur_s": {
+            "p10": 0.0,
+            "p50": 0.133,
+            "p90": 1.02,
+            "mean": 0.258,
+            "n": 37
+          },
+          "slide_nearest_named": {
+            "ease-in": 0.316,
+            "ease-out": 0.316,
+            "out-cubic": 0.158,
+            "linear": 0.158,
+            "out-expo": 0.053
+          },
+          "slide_easing_clusters": [
+            {
+              "bezier": [
+                0.676,
+                1.286,
+                0.641,
+                0.44
+              ],
+              "share": 0.625
+            },
+            {
+              "bezier": [
+                0.678,
+                -0.016,
+                0.664,
+                0.227
+              ],
+              "share": 0.375
+            }
+          ],
+          "note": "缓动只采用按位移拟合的滑入样本；按匹配分数拟合的（淡入等）曲线形状不可靠，仅用于时长"
+        }
+      },
+      "audio": {
+        "integrated_lufs": {
+          "p10": -14.06,
+          "p50": -14.06,
+          "p90": -14.06,
+          "mean": -14.06,
+          "n": 1
+        },
+        "true_peak_dbtp": {
+          "p10": -0.62,
+          "p50": -0.62,
+          "p90": -0.62,
+          "mean": -0.62,
+          "n": 1
+        },
+        "tempo_bpm": {
+          "p10": 136.0,
+          "p50": 136.0,
+          "p90": 136.0,
+          "mean": 136.0,
+          "n": 1
+        },
+        "beat_confidence": {
+          "p10": 2.98,
+          "p50": 2.98,
+          "p90": 2.98,
+          "mean": 2.98,
+          "n": 1
+        },
+        "boundary_to_beat_ms": {
+          "p10": 17.1,
+          "p50": 104.5,
+          "p90": 191.0,
+          "mean": 132.879,
+          "n": 58
+        },
+        "boundary_to_beat_random_ms": 110.3
+      },
+      "rhetoric": {
+        "labeled_segments": 28,
+        "shot_type_share": {
+          "live-footage": 0.393,
+          "3d-scene": 0.179,
+          "3d-object": 0.143,
+          "diagram": 0.071,
+          "screenshot": 0.071,
+          "chart-line": 0.036,
+          "timeline": 0.036,
+          "quote": 0.036,
+          "ui-mockup": 0.036
+        },
+        "metaphor_share": {
+          "none": 0.571,
+          "zoom-detail": 0.107,
+          "transform-morph": 0.071,
+          "reveal-mask": 0.071,
+          "accumulation-stack": 0.036,
+          "decline-fall": 0.036,
+          "contrast-split": 0.036,
+          "flow-path": 0.036,
+          "growth-rise": 0.036
+        },
+        "cut_in_share": {
+          "hard-cut": 0.857,
+          "transition": 0.143
+        },
+        "emphasis_share": {
+          "none": 0.536,
+          "color": 0.214,
+          "scale": 0.107,
+          "underline-marker": 0.071,
+          "motion-pop": 0.036,
+          "box": 0.036
+        }
+      },
+      "measurement_quality": {
+        "WReBvXwbSt8": {
+          "loudness_crosscheck_delta_lu": -0.06,
+          "caption_ocr_vs_asr": {
+            "n_captions": 133,
+            "char_agreement_mean": 0.834
+          },
+          "cut_candidates_rejected": 50
+        }
+      }
+    }
+  },
+  "unmeasured": [
+    "配乐压低幅度（需要人声 / 配乐分离）",
+    "音效与画面击打点对齐（需要区分音效与人声起音点）",
+    "缩放 / 旋转类入场的曲线（当前只跟踪平移和淡入）",
+    "非文字元素（图标、图形、3D 物体）的入场动效",
+    "L5 修辞标签：由客户端模型通过 segments_label 写回后才会出现在 rhetoric 中"
+  ]
+}
