@@ -19,7 +19,7 @@ export const EMPHASIS = ["color", "scale", "weight", "underline-marker", "box", 
 export const CUT_IN = ["hard-cut", "match-cut", "j-cut", "l-cut", "beat-cut", "jump-cut", "transition", "breath"] as const;
 
 export const ShotLabel = z.object({
-  shot_id: z.string().describe("shots.json 中的镜头 id，如 s003"),
+  segment_id: z.string().describe("shots.json 中 segments 的 id，如 g012"),
   shot_type: z.enum(SHOT_TYPE),
   metaphor: z.enum(METAPHOR),
   focal_position: z.enum(FOCAL_POSITION),

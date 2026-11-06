@@ -56,7 +56,7 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
     log(f"layout: content_box={layout['content_box']} templated={layout['templated']}")
     log("scan")
     sc = scan(path, info, layout["content_box"] if layout["templated"] else None)
-    np.savez_compressed(out / "timeline.npz", content=sc["content"], luma=sc["luma"], flow=sc["flow"])
+    np.savez_compressed(out / "timeline.npz", content=sc["content"], luma=sc["luma"], flow=sc["flow"], beat_signal=sc["beat_signal"])
     cut_ts = [c["t"] for c in sc["cuts"]]
     bounds = [0.0] + cut_ts + [dur]
     shots = []
@@ -65,6 +65,21 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
         if e - s <= 0:
             continue
         shots.append({"id": f"s{i + 1:03d}", "start": round(s, 3), "end": round(e, 3), "dur": round(e - s, 3)})
+
+    # 视觉节拍：与切点相距 < 0.4s 的节拍并入切点；切点 ∪ 节拍 = 段（segment），段是 L5 标注单位
+    beat_ts = [b["t"] for b in sc["beats"] if all(abs(b["t"] - c) >= 0.4 for c in cut_ts) and 0.4 <= b["t"] <= dur - 0.4]
+    marks = sorted([(t, "cut") for t in cut_ts] + [(t, "beat") for t in beat_ts])
+    seg_bounds_t = [(0.0, "start")] + marks
+    segments = []
+    for k, (t0, kind) in enumerate(seg_bounds_t):
+        t1 = seg_bounds_t[k + 1][0] if k + 1 < len(seg_bounds_t) else dur
+        if t1 - t0 <= 0:
+            continue
+        shot = next(x for x in shots if x["start"] <= t0 + 1e-6 < x["end"] + 1e-6)
+        segments.append({"id": f"g{len(segments) + 1:03d}", "shot_id": shot["id"], "start": round(t0, 3), "end": round(t1, 3),
+                         "dur": round(t1 - t0, 3), "boundary": kind})
+    for x in shots:
+        x["n_segments"] = sum(1 for g in segments if g["shot_id"] == x["id"])
 
     statics = static_intervals(sc["luma"], fps)
 
@@ -75,18 +90,19 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
     classify_items(items, words, dur)
     write_json(out / "ocr.json", {"fps": ocr_fps, "samples": samples, "items": items})
 
-    # ---- 每镜测量
+    # ---- 每镜 / 每段测量
     log("shots")
-    pal_size = scaled_size(info["width"], info["height"], 160)
     for s in shots:
         f0, f1 = int(s["start"] * fps), max(int(s["start"] * fps) + 1, int(s["end"] * fps))
-        s["text"] = "".join(w["w"] for w in words if (w["s"] + w["e"]) / 2 >= s["start"] and (w["s"] + w["e"]) / 2 < s["end"])
-        s["chars"] = len(s["text"])
         # 切点所在帧的内容分本身很高，排除每镜首帧
         s["motion_luma_mean"] = round(float(sc["luma"][f0 + 1:f1].mean()) if f1 - f0 > 1 else 0.0, 3)
         s["motion_flow_mean"] = round(float(sc["flow"][f0 + 1:f1].mean()) if f1 - f0 > 1 else 0.0, 4)
         s["static_max_s"] = round(max([min(st["end"], s["end"]) - max(st["start"], s["start"]) for st in statics
                                        if st["end"] > s["start"] and st["start"] < s["end"]] or [0.0]), 3)
+    pal_size = scaled_size(info["width"], info["height"], 160)
+    for s in segments:
+        s["text"] = "".join(w["w"] for w in words if (w["s"] + w["e"]) / 2 >= s["start"] and (w["s"] + w["e"]) / 2 < s["end"])
+        s["chars"] = len(s["text"])
         mid = grab_frame(path, (s["start"] + s["end"]) / 2, pal_size)
         if mid is not None:
             s["palette"] = palette(mid, k=5)
@@ -94,7 +110,7 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
         s["graphic_text_items"] = [k for k, it in enumerate(items)
                                    if it["kind"] == "graphic" and s["start"] <= it["first_t"] < s["end"]]
         s["has_caption"] = any(it["kind"] == "caption" and it["first_t"] < s["end"] and it["last_t"] >= s["start"] for it in items)
-        s["label"] = None  # L5，由 shots_label 写回
+        s["label"] = None  # L5，由客户端模型通过 segments_label 写回
 
     # ---- L3 入场动效
     log("entrances")
@@ -122,9 +138,10 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
         return float(np.min(np.abs(arr - t))) if arr.size else None
 
     align = []
-    for c in cut_ts:
+    for c, kind in marks:
         align.append({
             "t": c,
+            "kind": kind,
             "to_word_ms": None if not word_bounds.size else round(nearest(word_bounds, c) * 1000, 1),
             "to_segment_ms": None if not seg_bounds.size else round(nearest(seg_bounds, c) * 1000, 1),
             "in_pause": any(p["s"] - 0.05 <= c <= p["e"] + 0.05 for p in pz),
@@ -166,9 +183,15 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
             "cuts_per_min": round(len(cut_ts) / (dur / 60), 2),
             "shot_duration_s": pct([s["dur"] for s in shots]),
             "first_cut_s": cut_ts[0] if cut_ts else None,
-            "cut_to_word_ms": pct([a["to_word_ms"] for a in align]),
-            "cut_to_segment_ms": pct([a["to_segment_ms"] for a in align]),
-            "cut_in_pause_share": round(float(np.mean([a["in_pause"] for a in align])), 3) if align else None,
+            "cut_to_word_ms": pct([a["to_word_ms"] for a in align if a["kind"] == "cut"]),
+            "cut_to_segment_ms": pct([a["to_segment_ms"] for a in align if a["kind"] == "cut"]),
+            "cut_in_pause_share": round(float(np.mean([a["in_pause"] for a in align if a["kind"] == "cut"])), 3) if cut_ts else None,
+            "n_segments": len(segments),
+            "boundaries_per_min": round(len(marks) / (dur / 60), 2),
+            "segment_duration_s": pct([g["dur"] for g in segments]),
+            "boundary_to_word_ms": pct([a["to_word_ms"] for a in align]),
+            "boundary_to_segment_ms": pct([a["to_segment_ms"] for a in align]),
+            "segments_per_shot": pct([x["n_segments"] for x in shots]),
             "speech": None if not words else {
                 "chars": len(words),
                 "chars_per_min": round(len(words) / (speech_span / 60), 1),
@@ -196,8 +219,8 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
                 "share_time_with_graphic_text": round(float(np.mean([g > 0 for g in graphic_lines])), 3),
             },
             "persistent_text": [{"text": it["text"], "box": it["box"]} for it in persistent],
-            "frame_L_mean": pct([s.get("L_mean") for s in shots]),
-            "frame_C_mean": pct([s.get("C_mean") for s in shots]),
+            "frame_L_mean": pct([s.get("L_mean") for s in segments]),
+            "frame_C_mean": pct([s.get("C_mean") for s in segments]),
         },
         "L3": {
             "motion_flow_mean": pct([s["motion_flow_mean"] for s in shots], digits=4),
@@ -215,8 +238,8 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
         },
         "L4": None if not audio else {
             "tempo_bpm": audio["tempo_bpm"], "beat_confidence": audio["beat_confidence"],
-            "cut_to_onset_ms": pct([a["to_onset_ms"] for a in align]),
-            "cut_to_beat_ms": pct([a["to_beat_ms"] for a in align]),
+            "boundary_to_onset_ms": pct([a["to_onset_ms"] for a in align]),
+            "boundary_to_beat_ms": pct([a["to_beat_ms"] for a in align]),
             "onsets_per_min": round(len(audio["onsets"]) / (dur / 60), 1),
         },
         "E1": {
@@ -228,13 +251,14 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
         "elapsed_s": None,
     }
 
-    write_json(out / "shots.json", {"video_id": vid, "shots": shots, "cuts": sc["cuts"], "cut_candidates": sc["cut_candidates"],
+    write_json(out / "shots.json", {"video_id": vid, "shots": shots, "segments": segments, "cuts": sc["cuts"],
+                                    "cut_candidates": sc["cut_candidates"], "visual_beats": sc["beats"],
                                     "align": align, "entrances": entrances, "static_intervals": statics})
 
     if sheets:
         log("sheets")
-        shot_sheets(path, info, shots, out / "contact")
-        overview_sheet(path, info, shots, out / "contact" / "overview.png")
+        shot_sheets(path, info, segments, out / "contact")
+        overview_sheet(path, info, segments, out / "contact" / "overview.png")
         cut_review_sheet(path, info, sc["cuts"], out / "review" / "cuts.png", f"{vid} detected cuts ({len(sc['cuts'])})")
         # 只复核"接近阈值"的被拒候选，用于估计漏检（召回）
         near = sorted([c for c in sc["cut_candidates"] if c.get("d", 0) >= 0.3], key=lambda c: -c["d"])[:40]

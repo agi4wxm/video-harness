@@ -52,12 +52,13 @@ def _count(xs) -> dict:
 def _group_profile(vids: list[dict]) -> dict:
     M = [v["measures"] for v in vids]
     shots = [s for v in vids for s in v["shots"]["shots"]]
+    segs = [g for v in vids for g in v["shots"].get("segments", [])]
     align = [a for v in vids for a in v["shots"]["align"]]
     ents = [e for v in vids for e in v["shots"]["entrances"] if e.get("ok")]
     items = [it for v in vids for it in v["ocr"]["items"]]
     caps = [it for it in items if it.get("kind") == "caption"]
     gfx = [it for it in items if it.get("kind") == "graphic"]
-    labels = [s["label"] for s in shots if s.get("label")]
+    labels = [g["label"] for g in segs if g.get("label")]
 
     def vv(path):
         out = []
@@ -75,8 +76,12 @@ def _group_profile(vids: list[dict]) -> dict:
             "shot_duration_s": pct([s["dur"] for s in shots]),
             "cuts_per_min": pct(vv(["L1", "cuts_per_min"])),
             "first_cut_s": pct(vv(["L1", "first_cut_s"])),
-            "cut_to_word_boundary_ms": pct([a["to_word_ms"] for a in align]),
-            "cut_to_segment_boundary_ms": pct([a["to_segment_ms"] for a in align]),
+            "segment_duration_s": pct([g["dur"] for g in segs]),
+            "boundaries_per_min": pct(vv(["L1", "boundaries_per_min"])),
+            "segments_per_shot": pct([x.get("n_segments") for x in shots]),
+            "cut_to_word_boundary_ms": pct([a["to_word_ms"] for a in align if a.get("kind", "cut") == "cut"]),
+            "boundary_to_word_boundary_ms": pct([a["to_word_ms"] for a in align]),
+            "boundary_to_segment_boundary_ms": pct([a["to_segment_ms"] for a in align]),
             "cut_in_pause_share": pct(vv(["L1", "cut_in_pause_share"])),
             "speech_chars_per_min": pct(vv(["L1", "speech", "chars_per_min"])),
             "speech_pauses_per_min": pct(vv(["L1", "speech", "pauses_per_min"])),
@@ -88,9 +93,9 @@ def _group_profile(vids: list[dict]) -> dict:
                 "content_box": [m["L2"]["layout"]["content_box"] for m in M],
                 "content_area_ratio": pct([m["L2"]["layout"]["content_area_ratio"] for m in M]),
             },
-            "palette": merge_palettes([s["palette"] for s in shots if s.get("palette")], k=8),
-            "frame_L_mean": pct([s.get("L_mean") for s in shots]),
-            "frame_C_mean": pct([s.get("C_mean") for s in shots]),
+            "palette": merge_palettes([g["palette"] for g in segs if g.get("palette")], k=8),
+            "frame_L_mean": pct([g.get("L_mean") for g in segs]),
+            "frame_C_mean": pct([g.get("C_mean") for g in segs]),
             "caption": None if not caps else {
                 "h_ratio": pct([it["h_ratio"] for it in caps]),
                 "center_y": pct([it["cy"] for it in caps]),
@@ -127,10 +132,10 @@ def _group_profile(vids: list[dict]) -> dict:
             "true_peak_dbtp": pct(vv(["L0", "loudness", "true_peak_dbtp"])),
             "tempo_bpm": pct(vv(["L4", "tempo_bpm"])),
             "beat_confidence": pct(vv(["L4", "beat_confidence"])),
-            "cut_to_beat_ms": pct([a["to_beat_ms"] for a in align]),
+            "boundary_to_beat_ms": pct([a["to_beat_ms"] for a in align]),
         },
         "rhetoric": None if not labels else {
-            "labeled_shots": len(labels),
+            "labeled_segments": len(labels),
             "shot_type_share": _count([l.get("shot_type") for l in labels]),
             "metaphor_share": _count([l.get("metaphor") for l in labels]),
             "cut_in_share": _count([l.get("cut_in") for l in labels]),
@@ -156,7 +161,7 @@ def build_profile(videos_dir: str, out: str, author: str | None = None) -> dict:
             "音效与画面击打点对齐（需要区分音效与人声起音点）",
             "缩放 / 旋转类入场的曲线（当前只跟踪平移和淡入）",
             "非文字元素（图标、图形、3D 物体）的入场动效",
-            "L5 修辞标签：由客户端模型通过 shots_label 写回后才会出现在 rhetoric 中",
+            "L5 修辞标签：由客户端模型通过 segments_label 写回后才会出现在 rhetoric 中",
         ],
     }
     write_json(Path(out), profile)

@@ -29,7 +29,7 @@ def shot_sheets(path: str, info: dict, shots: list[dict], out_dir: Path, per_she
             canvas = Image.new("RGB", (strip.width, strip.height + 52), (20, 20, 24))
             canvas.paste(strip, (0, 52))
             d = ImageDraw.Draw(canvas)
-            d.text((6, 4), f"{s['id']}  {s['start']:.2f}–{s['end']:.2f}s  ({s['dur']:.2f}s)", fill=(255, 220, 0), font=font)
+            d.text((6, 4), f"{s['id']}  [{s.get('shot_id', '')} · {s.get('boundary', '')}]  {s['start']:.2f}–{s['end']:.2f}s  ({s['dur']:.2f}s)", fill=(255, 220, 0), font=font)
             d.text((6, 27), (s.get("text") or "")[:40], fill=(230, 230, 230), font=font)
             rows.append(canvas)
         W = max(r.width for r in rows)
@@ -53,7 +53,7 @@ def overview_sheet(path: str, info: dict, shots: list[dict], out: Path, cols: in
         img = Image.fromarray(f if f is not None else np.zeros((size[1], size[0], 3), np.uint8))
         d = ImageDraw.Draw(img)
         d.rectangle([0, 0, img.width, 18], fill=(0, 0, 0))
-        d.text((3, 1), f"{s['id']} {s['dur']:.1f}s", fill=(255, 220, 0), font=font)
+        d.text((3, 1), f"{s['id']} {s['dur']:.1f}s{' |' if s.get('boundary') == 'cut' else ''}", fill=(255, 220, 0), font=font)
         tiles.append(img)
     rows = (len(tiles) + cols - 1) // cols
     sheet = Image.new("RGB", (cols * size[0], rows * size[1]), (0, 0, 0))

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // video-harness MCP server —— 第一阶段：参考视频分析（docs/01）。
-// server 不调用任何大模型；需要"看"的判断（L5 标注）由客户端模型完成后通过 shots_label 写回。
+// server 不调用任何大模型；需要"看"的判断（L5 标注）由客户端模型完成后通过 segments_label 写回。
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -86,13 +86,15 @@ server.registerTool(
       .filter((d) => existsSync(join(dir, d, "measures.json")))
       .map((d) => {
         const m = JSON.parse(readFileSync(join(dir, d, "measures.json"), "utf8"));
-        const shots = JSON.parse(readFileSync(join(dir, d, "shots.json"), "utf8")).shots as Array<{ label: unknown }>;
+        const sj = JSON.parse(readFileSync(join(dir, d, "shots.json"), "utf8"));
+        const segs = (sj.segments ?? []) as Array<{ label: unknown }>;
         return {
           video_id: d,
           aspect: m.L0.aspect,
           duration_s: m.L0.duration_s,
           n_shots: m.L1.n_shots,
-          labeled: shots.filter((s) => s.label).length,
+          n_segments: segs.length,
+          labeled_segments: segs.filter((s) => s.label).length,
           sheets: readdirSync(join(dir, d, "contact")).filter((f) => f.endsWith(".png")),
         };
       });
@@ -105,7 +107,7 @@ server.registerTool(
   {
     title: "查看拼图",
     description:
-      "返回分析拼图图片。sheet 取值：overview（全片总览）、shots-01/02/…（每镜起/中/终三帧 + 文案，用于 L5 标注）、cuts / candidates（切点复核，用于 E1）。",
+      "返回分析拼图图片。sheet 取值：overview（全片总览，| 表示硬切）、shots-01/02/…（每段起/中/终三帧 + 文案，用于 L5 标注）、cuts / candidates（切点复核，用于 E1）。",
     inputSchema: { set: SET_NAME, video_id: z.string(), sheet: z.string().regex(/^(overview|shots-\d{2}|cuts|candidates)$/) },
   },
   async ({ set, video_id, sheet }) => {
@@ -117,27 +119,29 @@ server.registerTool(
 );
 
 server.registerTool(
-  "shots_label",
+  "segments_label",
   {
     title: "写回 L5 标注",
     description:
-      "看过 shots-xx 拼图后，按封闭词表为镜头打标签并写回 shots.json。词表见 resource vh://vocab/l5。不在词表内的值会被拒绝。",
+      "看过 shots-xx 拼图后，按封闭词表为段（segment，id 形如 g012；段 = 硬切 ∪ 视觉节拍切分出的片段）打标签并写回 shots.json。" +
+      "词表见 resource vh://vocab/l5，不在词表内的值会被拒绝。",
     inputSchema: { set: SET_NAME, video_id: z.string(), labels: z.array(ShotLabel).min(1) },
   },
   async ({ set, video_id, labels }) => {
     const file = join(videosDir(set), video_id, "shots.json");
     if (!existsSync(file)) return fail(`未找到 ${file}`);
     const data = JSON.parse(readFileSync(file, "utf8"));
-    const byId = new Map<string, { id: string; label: unknown }>(data.shots.map((s: { id: string; label: unknown }) => [s.id, s]));
-    const unknown = labels.filter((l) => !byId.has(l.shot_id)).map((l) => l.shot_id);
-    if (unknown.length) return fail(`未知镜头：${unknown.join(", ")}`);
+    const segs = (data.segments ?? []) as Array<{ id: string; label: unknown }>;
+    const byId = new Map(segs.map((s) => [s.id, s]));
+    const unknown = labels.filter((l) => !byId.has(l.segment_id)).map((l) => l.segment_id);
+    if (unknown.length) return fail(`未知段：${unknown.join(", ")}`);
     for (const l of labels) {
-      const { shot_id, ...rest } = l;
-      byId.get(shot_id)!.label = rest;
+      const { segment_id, ...rest } = l;
+      byId.get(segment_id)!.label = rest;
     }
     writeFileSync(file, JSON.stringify(data, null, 2));
-    const labeled = data.shots.filter((s: { label: unknown }) => s.label).length;
-    return text({ written: labels.length, labeled, total: data.shots.length });
+    const labeled = segs.filter((s) => s.label).length;
+    return text({ written: labels.length, labeled, total: segs.length });
   },
 );
 
@@ -197,7 +201,7 @@ server.registerPrompt(
             `对参考集 ${set} 做参考分析，视频：${paths}。流程：`,
             "1. video_analyze → job_wait 直到完成；",
             "2. 对每个视频用 analysis_sheet 查看 cuts / candidates，判断检测出的切点和被拒候选各有多少是真切点，记录 E1 结论；",
-            "3. 读取 vh://vocab/l5，逐张查看 shots-xx 拼图，用 shots_label 写回标签（只能用词表中的值，给出依据时间点）；",
+            "3. 读取 vh://vocab/l5，逐张查看 shots-xx 拼图，用 segments_label 写回每段标签（只能用词表中的值，给出依据时间点）；",
             "4. profile_build 生成 reference-profile.json，并总结风格要点与无法映射的条目。",
           ].join("\n"),
         },

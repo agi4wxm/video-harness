@@ -64,7 +64,7 @@
 
 ```
 参考视频 → video_analyze ─(测量内核)→ measures/shots + 拼图
-        → shots_label（客户端模型做选择题）→ profile_build → reference-profile
+        → segments_label（客户端模型做选择题）→ profile_build → reference-profile
         → recipe_add / replica → 进入素材库（draft）
         → reconstruct_eval（重建测试，检验提取结果）
 ```

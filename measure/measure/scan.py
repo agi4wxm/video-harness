@@ -27,7 +27,7 @@ def scan(path: str, info: dict, content_box: list[float] | None = None) -> dict:
     scale = FLOW_SHORT_SIDE / min(cw, chh)
     fw, fh = max(16, int(cw * scale)), max(16, int(chh * scale))
 
-    content, luma, flow, hists = [], [], [], []
+    content, luma, flow, hists, thumbs = [], [], [], [], []
     prev_hsv = prev_gray = prev_small = None
     for i, rgb in enumerate(iter_frames(path, (w, h))):
         rgb = rgb[cy0:cy1, cx0:cx1]
@@ -36,6 +36,7 @@ def scan(path: str, info: dict, content_box: list[float] | None = None) -> dict:
         small = cv2.resize(gray, (fw, fh), interpolation=cv2.INTER_AREA)
         hist = cv2.calcHist([hsv.astype(np.uint8)], [0, 1, 2], None, [16, 4, 4], [0, 180, 0, 256, 0, 256]).ravel()
         hists.append(hist / max(1.0, hist.sum()))
+        thumbs.append(cv2.resize(gray, (32, 32), interpolation=cv2.INTER_AREA))
         if prev_hsv is None:
             content.append(0.0)
             luma.append(0.0)
@@ -56,7 +57,9 @@ def scan(path: str, info: dict, content_box: list[float] | None = None) -> dict:
     luma = np.asarray(luma)
     flow = np.asarray(flow)
     hists = np.asarray(hists, np.float32)
+    thumbs = np.asarray(thumbs, np.uint8)
     cuts, candidates = detect_cuts(content, hists, fps)
+    beats, beat_signal = detect_beats(thumbs, fps)
     return {
         "fps": fps,
         "n_frames": int(content.size),
@@ -66,6 +69,8 @@ def scan(path: str, info: dict, content_box: list[float] | None = None) -> dict:
         "cuts": cuts,
         "cut_candidates": candidates,
         "content_box": content_box,
+        "beats": beats,
+        "beat_signal": beat_signal,
     }
 
 
@@ -118,6 +123,33 @@ def detect_cuts(
     cuts.sort(key=lambda r: r["frame"])
     candidates.sort(key=lambda r: r["frame"])
     return cuts, candidates
+
+
+def detect_beats(
+    thumbs: np.ndarray,
+    fps: float,
+    gap: int = 9,
+    win: int = 6,
+    thresh: float = 10.0,
+    min_spacing_s: float = 0.8,
+) -> tuple[list[dict], np.ndarray]:
+    """视觉节拍：画面构图发生一次实质变化（切点、MG 场景切换、主要元素入场 / 退场）。
+
+    比较 [i-gap-win, i-gap) 与 [i+gap, i+gap+win) 两个窗口的 32×32 灰度均值图的平均绝对差（0–255），
+    取 ±min_spacing_s 内的局部极大且 ≥ thresh。空间结构对"同一黑底上换内容"的 MG 转场敏感，
+    颜色直方图做不到这一点。阈值来自 analysis/chaping 的人工复核（docs/01 · E1）。
+    """
+    n = len(thumbs)
+    T = thumbs.astype(np.float32)
+    D = np.zeros(n, np.float32)
+    for i in range(gap + win, n - gap - win):
+        D[i] = np.abs(T[i - gap - win:i - gap].mean(axis=0) - T[i + gap:i + gap + win].mean(axis=0)).mean()
+    r = int(min_spacing_s * fps)
+    beats = []
+    for i in range(1, n - 1):
+        if D[i] >= thresh and D[i] == D[max(0, i - r):i + r + 1].max():
+            beats.append({"frame": i, "t": round(i / fps, 3), "strength": round(float(D[i]), 2)})
+    return beats, D
 
 
 def static_intervals(luma: np.ndarray, fps: float, thresh: float = 0.6, min_s: float = 0.5) -> list[dict]:
