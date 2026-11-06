@@ -20,6 +20,7 @@ def main(argv=None) -> int:
     a.add_argument("videos", nargs="+")
     a.add_argument("--out", required=True)
     a.add_argument("--asr", default="auto", help="auto | openai | local | none | file:<voice.json>")
+    a.add_argument("--lang", default="zh", help="语音语言（ISO-639-1），如 zh / en")
     a.add_argument("--ocr-fps", type=float, default=2.0)
     a.add_argument("--no-sheets", action="store_true")
 
@@ -32,7 +33,7 @@ def main(argv=None) -> int:
     if args.cmd == "analyze":
         from .analyze import analyze
 
-        res = [analyze(v, args.out, args.asr, args.ocr_fps, not args.no_sheets) for v in args.videos]
+        res = [analyze(v, args.out, args.asr, args.ocr_fps, not args.no_sheets, args.lang) for v in args.videos]
         print(json.dumps(res, ensure_ascii=False, cls=NpEncoder))
     elif args.cmd == "profile":
         from .profile import build_profile

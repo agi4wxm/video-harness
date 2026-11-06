@@ -29,7 +29,7 @@ from .util import SCHEMA_VERSION, grab_frame, log, pct, scaled_size, video_id, v
 MAX_ENTRANCES = 60
 
 
-def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float = 2.0, sheets: bool = True) -> dict:
+def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float = 2.0, sheets: bool = True, lang: str = "zh") -> dict:
     t_begin = time.time()
     info = video_info(path)
     vid = video_id(path)
@@ -45,7 +45,7 @@ def analyze(path: str, out_root: str, asr_backend: str = "auto", ocr_fps: float 
 
     # ---- 语音
     log("asr")
-    asr = asr_mod.transcribe(path, asr_backend)
+    asr = asr_mod.transcribe(path, asr_backend, lang)
     words = asr["words"] if asr else []
     if asr:
         write_json(out / "asr.json", asr)
