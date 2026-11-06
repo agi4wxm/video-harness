@@ -1,0 +1,480 @@
+{
+  "version": 1,
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
+  },
+  "style": "preset.style/mono-window@0.1",
+  "motion": "preset.motion/standard@0.1",
+  "template": {
+    "id": "element/window-frame@0.1",
+    "topic": "手机充到 80% 以后为什么变慢？",
+    "tag": "EXPLAIN · 001"
+  },
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 1.85,
+      "text": "手机充到百分之八十以后",
+      "block": "block/title-kinetic@0.1",
+      "params": {
+        "lines": [
+          "充到 80% 以后"
+        ],
+        "emphasis": [
+          "80%"
+        ],
+        "mode": "chars"
+      },
+      "intent": {
+        "focal": "80%",
+        "metaphor": "none",
+        "emphasis_words": [
+          "百分之八十"
+        ],
+        "motion": "逐字入场，80% 变色弹一下"
+      },
+      "beats": [
+        {
+          "t": 0.9,
+          "word": "八十",
+          "event": "emphasis"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "start": 1.85,
+      "end": 3.53,
+      "text": "为什么突然变慢了",
+      "block": "block/footage-window@0.1",
+      "params": {
+        "src": "assets/media.image/phone-charging/phone-charging.webp",
+        "move": "in",
+        "focus": {
+          "x": 0.5,
+          "y": 0.47
+        },
+        "callouts": [
+          {
+            "at": 0.5,
+            "text": "变慢？",
+            "x": 0.5,
+            "y": 0.22,
+            "color": "accent2"
+          }
+        ],
+        "box": {
+          "at": 0.2,
+          "x": 0.34,
+          "y": 0.39,
+          "w": 0.32,
+          "h": 0.14
+        }
+      },
+      "intent": {
+        "focal": "电量图标",
+        "metaphor": "zoom-detail",
+        "emphasis_words": [
+          "变慢"
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "start": 3.53,
+      "end": 6.48,
+      "text": "充电的时候锂离子会从正极跑到负极",
+      "block": "block/mg-diagram@0.1",
+      "params": {
+        "title": "充电时",
+        "nodes": [
+          {
+            "id": "pos",
+            "glyph": "+",
+            "label": "正极",
+            "x": 0.22,
+            "y": 0.58,
+            "size": "lg",
+            "color": "negative"
+          },
+          {
+            "id": "neg",
+            "glyph": "−",
+            "label": "负极",
+            "x": 0.78,
+            "y": 0.58,
+            "size": "lg",
+            "color": "accent"
+          }
+        ],
+        "edges": [
+          {
+            "from": "pos",
+            "to": "neg",
+            "label": "锂离子",
+            "style": "flow"
+          }
+        ],
+        "steps": [
+          {
+            "at": 0.15,
+            "show": [
+              "pos"
+            ]
+          },
+          {
+            "at": 0.9,
+            "show": [
+              "neg"
+            ]
+          },
+          {
+            "at": 1.6,
+            "show": [
+              "pos>neg"
+            ]
+          }
+        ]
+      },
+      "intent": {
+        "focal": "锂离子流动",
+        "metaphor": "flow-path",
+        "emphasis_words": [
+          "锂离子",
+          "正极",
+          "负极"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "start": 6.48,
+      "end": 8.6,
+      "text": "前面电池是空的可以用大电流猛冲",
+      "block": "block/mg-diagram@0.1",
+      "params": {
+        "nodes": [
+          {
+            "id": "chg",
+            "shape": "box",
+            "label": "充电器",
+            "x": 0.16,
+            "y": 0.5,
+            "color": "fg",
+            "size": "md"
+          },
+          {
+            "id": "bat",
+            "shape": "box",
+            "label": "电池 · 空",
+            "x": 0.8,
+            "y": 0.5,
+            "color": "positive",
+            "size": "md"
+          }
+        ],
+        "edges": [
+          {
+            "from": "chg",
+            "to": "bat",
+            "label": "大电流",
+            "style": "flow",
+            "color": "accent2"
+          }
+        ],
+        "steps": [
+          {
+            "at": 0.1,
+            "show": [
+              "chg",
+              "bat"
+            ]
+          },
+          {
+            "at": 0.6,
+            "show": [
+              "chg>bat"
+            ]
+          },
+          {
+            "at": 1.4,
+            "emphasize": [
+              "bat"
+            ]
+          }
+        ]
+      },
+      "intent": {
+        "focal": "大电流",
+        "metaphor": "flow-path",
+        "emphasis_words": [
+          "大电流"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "start": 8.6,
+      "end": 10.37,
+      "text": "叫恒流快充",
+      "block": "block/title-kinetic@0.1",
+      "params": {
+        "lines": [
+          "恒流快充"
+        ],
+        "emphasis": [
+          "快充"
+        ],
+        "subtitle": "Constant Current",
+        "mode": "pop"
+      },
+      "intent": {
+        "focal": "恒流快充",
+        "metaphor": "none",
+        "emphasis_words": [
+          "恒流快充"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "start": 10.37,
+      "end": 13.78,
+      "text": "快满的时候负极挤满了再猛冲就会伤电池",
+      "block": "block/mg-diagram@0.1",
+      "params": {
+        "title": "快满时",
+        "nodes": [
+          {
+            "id": "pos",
+            "glyph": "+",
+            "label": "正极",
+            "x": 0.18,
+            "y": 0.6,
+            "size": "md",
+            "color": "negative"
+          },
+          {
+            "id": "neg",
+            "glyph": "−",
+            "label": "负极",
+            "x": 0.74,
+            "y": 0.6,
+            "size": "lg",
+            "color": "accent"
+          },
+          {
+            "id": "i1",
+            "glyph": "Li",
+            "x": 0.6,
+            "y": 0.36,
+            "size": "sm",
+            "color": "accent2"
+          },
+          {
+            "id": "i2",
+            "glyph": "Li",
+            "x": 0.74,
+            "y": 0.32,
+            "size": "sm",
+            "color": "accent2"
+          },
+          {
+            "id": "i3",
+            "glyph": "Li",
+            "x": 0.88,
+            "y": 0.36,
+            "size": "sm",
+            "color": "accent2"
+          },
+          {
+            "id": "i4",
+            "glyph": "Li",
+            "x": 0.62,
+            "y": 0.82,
+            "size": "sm",
+            "color": "accent2"
+          },
+          {
+            "id": "i5",
+            "glyph": "Li",
+            "x": 0.92,
+            "y": 0.6,
+            "size": "sm",
+            "color": "accent2"
+          },
+          {
+            "id": "warn",
+            "shape": "pill",
+            "label": "伤电池",
+            "x": 0.27,
+            "y": 0.86,
+            "color": "negative"
+          }
+        ],
+        "edges": [
+          {
+            "from": "pos",
+            "to": "neg",
+            "style": "arrow"
+          }
+        ],
+        "steps": [
+          {
+            "at": 0.1,
+            "show": [
+              "pos",
+              "neg"
+            ]
+          },
+          {
+            "at": 0.5,
+            "show": [
+              "i1",
+              "i4"
+            ]
+          },
+          {
+            "at": 0.75,
+            "show": [
+              "i2",
+              "i5"
+            ]
+          },
+          {
+            "at": 1.0,
+            "show": [
+              "i3"
+            ]
+          },
+          {
+            "at": 2.2,
+            "show": [
+              "warn"
+            ],
+            "emphasize": [
+              "neg"
+            ]
+          }
+        ]
+      },
+      "intent": {
+        "focal": "挤满的负极",
+        "metaphor": "accumulation-stack",
+        "emphasis_words": [
+          "挤满",
+          "伤电池"
+        ]
+      }
+    },
+    {
+      "id": "s07",
+      "start": 13.78,
+      "end": 16.96,
+      "text": "所以手机改成恒压慢充电流一点点变小",
+      "block": "block/mg-diagram@0.1",
+      "params": {
+        "nodes": [
+          {
+            "id": "cc",
+            "shape": "pill",
+            "label": "恒流 · 大电流",
+            "x": 0.5,
+            "y": 0.26,
+            "color": "accent2"
+          },
+          {
+            "id": "cv",
+            "shape": "pill",
+            "label": "恒压 · 电流渐小",
+            "x": 0.5,
+            "y": 0.72,
+            "size": "lg",
+            "color": "accent"
+          }
+        ],
+        "edges": [
+          {
+            "from": "cc",
+            "to": "cv",
+            "label": "快满时切换",
+            "style": "arrow"
+          }
+        ],
+        "steps": [
+          {
+            "at": 0.1,
+            "show": [
+              "cc"
+            ]
+          },
+          {
+            "at": 0.9,
+            "show": [
+              "cv"
+            ]
+          },
+          {
+            "at": 2.0,
+            "emphasize": [
+              "cv"
+            ]
+          }
+        ]
+      },
+      "intent": {
+        "focal": "恒压慢充",
+        "metaphor": "cause-effect-arrow",
+        "emphasis_words": [
+          "恒压慢充",
+          "变小"
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "start": 16.96,
+      "end": 19.2,
+      "text": "慢是为了让电池活得更久",
+      "block": "block/title-kinetic@0.1",
+      "params": {
+        "lines": [
+          "慢，是为了",
+          "让电池更长寿"
+        ],
+        "emphasis": [
+          "更长寿"
+        ],
+        "mode": "lines"
+      },
+      "intent": {
+        "focal": "更长寿",
+        "metaphor": "none",
+        "emphasis_words": [
+          "更久"
+        ]
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "between": [
+        "s02",
+        "s03"
+      ],
+      "asset": "transition/push-up@0.1",
+      "duration_s": 0.35
+    },
+    {
+      "between": [
+        "s07",
+        "s08"
+      ],
+      "asset": "transition/fade@0.1",
+      "duration_s": 0.3
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "video-harness-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "video-harness 渲染引擎（Remotion）：runtime + theme；积木在 ../library",
+  "scripts": {
+    "index": "tsx scripts/build-index.ts",
+    "render": "tsx scripts/render.ts",
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "postinstall": "ln -sfn ../engine/node_modules ../library/node_modules"
+  },
+  "dependencies": {
+    "@fontsource/inter": "5.3.0",
+    "@fontsource/jetbrains-mono": "5.3.0",
+    "@fontsource/noto-sans-sc": "5.3.1",
+    "@remotion/bundler": "4.0.541",
+    "@remotion/cli": "4.0.541",
+    "@remotion/renderer": "4.0.541",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.541",
+    "yaml": "2.9.1",
+    "zod": "3.25.76",
+    "zod-to-json-schema": "3.25.2"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

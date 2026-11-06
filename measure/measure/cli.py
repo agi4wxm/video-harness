@@ -19,7 +19,7 @@ def main(argv=None) -> int:
     a = sub.add_parser("analyze", help="分析一个或多个视频")
     a.add_argument("videos", nargs="+")
     a.add_argument("--out", required=True)
-    a.add_argument("--asr", default="auto", choices=["auto", "openai", "local", "none"])
+    a.add_argument("--asr", default="auto", help="auto | openai | local | none | file:<voice.json>")
     a.add_argument("--ocr-fps", type=float, default=2.0)
     a.add_argument("--no-sheets", action="store_true")
 

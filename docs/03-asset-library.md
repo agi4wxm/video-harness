@@ -150,7 +150,9 @@ blobs/<sha256>                                                        # 大文�
 library.db                                                            # SQLite：全文 + 向量索引，可由清单重建
 ```
 
-清单是唯一事实来源；索引库随时可从清单重建。
+清单是唯一事实来源；索引随时可从清单重建。
+
+**v0 实现**：索引是 `library/index.json`（由 `engine` 的 `npm run index` 生成，含参数 JSON Schema），检索为标签过滤 + 关键词匹配；SQLite 全文 / 向量索引在素材数量变多后再加。小于 1MB 的媒体文件直接与 `asset.yaml` 放在一起提交；字体通过 npm（`@fontsource`）随引擎打包，`entry: npm:<包名>`。
 
 ## 7. 与其他部分的关系
 

@@ -44,13 +44,22 @@ harness 的价值集中在两件事上，它们是同一个闭环的两端：
 | 阶段 | 状态 | 产物 |
 |---|---|---|
 | 1. 测量内核 + 参考分析 | ✅ v0 | `measure/`、`server/`（MCP）、[analysis/chaping/REPORT.md](analysis/chaping/REPORT.md)、`analysis/chaping/reference-profile.json` |
-| 2. 素材库最小版 + 引擎最小版 | 待开始 | |
+| 2. 素材库最小版 + 引擎最小版 | ✅ v0 | `library/`（12 个素材：3 积木、版式、2 预设、2 转场、字体、图片）、`engine/`（Remotion runtime）、[examples/battery-80](examples/battery-80/README.md) |
+| 3. 编排内核 + 生成流水线（TTS、状态机、闸门） | 待开始 | |
 
 ### 运行 MCP server
 
 ```bash
 pip install -e measure[openai]
-cd server && npm install && npm run build
+(cd engine && npm install && npm run index)
+(cd server && npm install && npm run build)
 ```
 
-在 MCP 客户端中配置：`{"command": "node", "args": ["<repo>/server/dist/index.js"]}`；工作流 prompt：`analyze-references`。
+在 MCP 客户端中配置：`{"command": "node", "args": ["<repo>/server/dist/index.js"]}`。
+
+| 分组 | 工具 |
+|---|---|
+| 参考分析 | `video_analyze`、`analysis_list`、`analysis_sheet`、`segments_label`、`profile_build`；prompt `analyze-references` |
+| 素材库 | `asset_search`、`asset_get`、`asset_preview`、`asset_use` |
+| 项目与渲染 | `project_init`、`storyboard_validate`、`render_stills`、`render_video` |
+| 长任务 | `job_status`、`job_wait` |

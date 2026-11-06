@@ -1,0 +1,15 @@
+id: element/window-frame@0.1.0
+kind: element
+title: 窗口版式
+summary: 背景网格 + 窗口面板（标签与全片进度条）+ 窗内字幕条 + 底部话题栏
+tags:
+  aspect: ["9:16"]
+entry: ./index.tsx
+provenance:
+  source: self-made
+  license: 自有
+  reference: analysis/chaping（只沿用结构比例：内容区约占 40%，字幕在内容区下方，底部常驻话题；视觉为原创）
+quality:
+  status: draft
+  uses: 0
+  p0_rate: null

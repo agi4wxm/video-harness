@@ -1,0 +1,16 @@
+id: media.font/noto-sans-sc@5.0.0
+kind: media.font
+title: Noto Sans SC
+summary: 中文正文与标题；字重 400, 700, 900
+tags:
+  script: [zh, latin]
+entry: npm:@fontsource/noto-sans-sc
+family: "Noto Sans SC"
+weights: [400, 700, 900]
+provenance:
+  source: npm @fontsource/noto-sans-sc（通过 engine 依赖打包，渲染时不联网）
+  license: SIL Open Font License 1.1
+quality:
+  status: verified
+  uses: 0
+  p0_rate: null

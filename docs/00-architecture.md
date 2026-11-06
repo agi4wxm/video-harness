@@ -198,8 +198,8 @@ video-harness/
 
 按"最快形成闭环"排序：
 
-1. **测量内核 + `video_analyze`**：能分析参考视频，并完成测量层准确率验证（01 · E1）。
-2. **素材库最小版 + 引擎最小版**：清单格式、`asset_search` / `asset_use`；theme + 3 个积木；runtime 能读分镜。
+1. **测量内核 + `video_analyze`**：能分析参考视频，并完成测量层准确率验证（01 · E1）。✅ 见 `measure/`、`analysis/chaping/REPORT.md`。
+2. **素材库最小版 + 引擎最小版**：清单格式、`asset_search` / `asset_use`；theme + 3 个积木；runtime 能读分镜。✅ 见 `library/`、`engine/`、`examples/battery-80`。
 3. **编排内核 + 生成流水线**：从文案到成片跑通，硬约束先做 H1、H2、H3、H11。
 4. **评审闭环**：拼图、`scene_inspect`、成片测量、评分卡、问题归因。
 5. **重建测试 + 沉淀**：两条流水线接通；`asset_promote` 让好镜头回流素材库。

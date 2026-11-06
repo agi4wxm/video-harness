@@ -1,0 +1,38 @@
+id: block/mg-diagram@0.1.0
+kind: block
+title: 黑底图解
+summary: 节点 + 连线 + 分步揭示；连线可为箭头或流动粒子，节点可在指定时刻脉冲强调
+tags:
+  shot_type: [diagram, process-flow]
+  metaphor: [flow-path, contrast-split, cause-effect-arrow]
+  emphasis_treatment: [motion-pop, box]
+  aspect: ["9:16", "16:9"]
+entry: ./index.tsx
+params_schema: ./schema.ts
+constraints:
+  duration_s: [1.5, 6.0]
+  max_nodes: 12
+examples:
+  - name: 离子流动
+    duration_s: 3.5
+    params:
+      title: 充电时
+      nodes:
+        - { id: pos, glyph: "+", label: 正极, x: 0.22, y: 0.55, size: lg, color: negative }
+        - { id: neg, glyph: "−", label: 负极, x: 0.78, y: 0.55, size: lg, color: accent }
+      edges:
+        - { from: pos, to: neg, label: 锂离子, style: flow, color: fgMuted }
+      steps:
+        - { at: 0.2, show: [pos] }
+        - { at: 0.6, show: [neg] }
+        - { at: 1.1, show: ["pos>neg"] }
+        - { at: 2.2, emphasize: [neg] }
+implements: [recipe/process-reveal]
+provenance:
+  source: self-made
+  license: 自有
+  reference: analysis/chaping（黑底 MG 图解段，flow-path / contrast-split）
+quality:
+  status: draft
+  uses: 0
+  p0_rate: null

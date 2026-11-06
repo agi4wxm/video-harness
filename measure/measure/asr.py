@@ -18,6 +18,10 @@ def transcribe(path: str, backend: str = "auto", language: str = "zh") -> dict |
         return None
     if backend == "auto":
         backend = os.environ.get("VH_ASR_BACKEND", "openai")
+    if backend.startswith("file:"):
+        # 自己渲染的成片：语音时间轴已知（voice.json，格式同本模块输出），无需识别
+        d = json.loads(Path(backend[5:]).read_text())
+        return {"backend": "file", "text": "".join(w["w"] for w in d["words"]), "words": d["words"], "segments": d["segments"]}
 
     key = f"asr-{backend}-{language}-{file_sha256(path)[:16]}.json"
     cpath = cache_dir() / key

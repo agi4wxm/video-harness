@@ -19,9 +19,13 @@ const jobs = new Map<string, Job>();
 const waiters = new Map<string, Array<() => void>>();
 
 export function runPython(kind: string, args: string[], cwd: string, python: string): Job {
+  return runCommand(kind, python, ["-m", "measure", ...args], cwd);
+}
+
+export function runCommand(kind: string, cmd: string, args: string[], cwd: string): Job {
   const job: Job = { id: randomUUID().slice(0, 8), kind, state: "running", startedAt: Date.now(), log: [] };
   jobs.set(job.id, job);
-  const child = spawn(python, ["-m", "measure", ...args], { cwd, env: process.env });
+  const child = spawn(cmd, args, { cwd, env: process.env });
   let stdout = "";
   child.stdout.on("data", (d) => (stdout += d.toString()));
   child.stderr.on("data", (d) => {

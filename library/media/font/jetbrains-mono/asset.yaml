@@ -1,0 +1,16 @@
+id: media.font/jetbrains-mono@5.0.0
+kind: media.font
+title: JetBrains Mono
+summary: HUD 数字与标签；字重 500, 700
+tags:
+  script: [latin]
+entry: npm:@fontsource/jetbrains-mono
+family: "JetBrains Mono"
+weights: [500, 700]
+provenance:
+  source: npm @fontsource/jetbrains-mono（通过 engine 依赖打包，渲染时不联网）
+  license: SIL Open Font License 1.1
+quality:
+  status: verified
+  uses: 0
+  p0_rate: null

@@ -1,0 +1,15 @@
+id: preset.motion/standard@0.1.0
+kind: preset.motion
+title: 标准动效
+summary: 入场 0.43s、逐个间隔 70ms、逐字 40ms、弹簧弹出；缓动暂用 out-cubic
+tags:
+  mood: [crisp]
+entry: ./tokens.json
+provenance:
+  source: self-made
+  license: 自有
+  reference: analysis/chaping/reference-profile.json（入场时长中位 0.43s；缓动测量未通过 E1）
+quality:
+  status: draft
+  uses: 0
+  p0_rate: null
