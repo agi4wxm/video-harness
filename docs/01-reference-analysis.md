@@ -55,7 +55,7 @@
 ```yaml
 shot_type: [kinetic-text, stat-number, chart-bar, chart-line, chart-pie, comparison-split,
             process-flow, timeline, map, 3d-object, 3d-scene, ui-mockup, logo, icon-grid,
-            quote, list, diagram, generative-footage, other]
+            quote, list, diagram, live-footage, talking-head, screenshot, generative-footage, other]
 metaphor:  [growth-rise, decline-fall, contrast-split, accumulation-stack, flow-path,
             cause-effect-arrow, zoom-detail, reveal-mask, transform-morph, scale-compare, none]
 focal_position: [center, upper-third, lower-third, left, right, full-frame]
@@ -63,6 +63,7 @@ emphasis_treatment: [color, scale, weight, underline-marker, box, motion-pop, no
 cut_in: [hard-cut, match-cut, j-cut, l-cut, beat-cut, jump-cut, transition, breath]  # 进入本镜的方式
 concepts_per_shot: 1 | 2 | 3+
 visualized_words: [<文案中被画出来的词>]
+evidence_t: <作答依据的时间点>
 ```
 
 ### 3.3 输出物

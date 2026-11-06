@@ -1,0 +1,30 @@
+[project]
+name = "vh-measure"
+version = "0.1.0"
+description = "video-harness 测量内核：参考视频分析与成片检测共用"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "opencv-python-headless",
+  "scikit-learn",
+  "scipy",
+  "librosa",
+  "pyloudnorm",
+  "soundfile",
+  "rapidocr-onnxruntime",
+  "pillow",
+]
+
+[project.optional-dependencies]
+openai = ["openai"]
+local-asr = ["faster-whisper"]
+
+[project.scripts]
+vh-measure = "measure.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["measure"]

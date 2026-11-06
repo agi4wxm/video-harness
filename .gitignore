@@ -1,0 +1,10 @@
+# 大文件与派生数据（见 docs/00-architecture.md §7）
+analysis/**/videos/
+projects/
+blobs/
+cache/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.venv/
