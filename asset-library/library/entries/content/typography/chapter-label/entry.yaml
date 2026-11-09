@@ -1,0 +1,31 @@
+id: content.typography/chapter-label
+type: content.typography
+version: 0.1.0
+title: 章节标签
+summary: 左上角白色粗黑体。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=15
+    - reference.video/hoverslam-zjucat#t=61
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:985ab28e4646971f58b53a703bd1b6174791c43ba919dc13545e2e48451e6e94.jpg
+  - blob:sha256:d4d596285d7d25a0b972590bd5035083365a2b57e3a2a730a9d37a0d5ad92ed4.jpg
+deps: []
+spec:
+  kind: label
+  fonts:
+    - 思源黑体 Heavy
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

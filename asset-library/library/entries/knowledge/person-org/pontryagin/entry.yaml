@@ -1,0 +1,30 @@
+id: knowledge.person-org/pontryagin
+type: knowledge.person-org
+version: 0.1.0
+title: 庞特里亚金
+summary: 苏联数学家，提出极小值原理。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=110
+  restrictions:
+    - real-person
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:b6ee8d53c7f79f8ef4426cc8b73abc4324396f9e91c75a1f92948d2bd7dc32b5.jpg
+deps: []
+spec:
+  name: Lev Pontryagin
+  role: 数学家
+  dates: 1908–1988
+  image_rights: 肖像需使用公有领域或授权照片
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

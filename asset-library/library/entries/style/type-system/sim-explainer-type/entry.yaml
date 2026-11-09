@@ -1,0 +1,66 @@
+id: style.type-system/sim-explainer-type
+type: style.type-system
+version: 0.1.0
+title: 仿真讲解字体规范
+summary: 粗黑体章节标签、LaTeX 衬线公式、等宽读数、底部字幕关键词标黄。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=15
+    - reference.video/hoverslam-zjucat#t=44
+    - reference.video/hoverslam-zjucat#t=158
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:985ab28e4646971f58b53a703bd1b6174791c43ba919dc13545e2e48451e6e94.jpg
+  - blob:sha256:c301c7c5b419901ab3e327acdcead43588d8b95eca1a183a6955608baeceb188.jpg
+  - blob:sha256:03d630a7331736301c18880cb0dffbb33f92d497198b2afc264ea838b3ec20db.jpg
+deps: []
+spec:
+  roles:
+    - role: 章节标签
+      font: 思源黑体 Heavy
+      size_h: 0.04
+      color: ink
+      position: 左上
+    - role: 公式
+      font: KaTeX / Computer Modern
+      size_h: 0.035
+      color: ink
+      note: 新加的项用 highlight
+    - role: 公式注释
+      font: 思源黑体 Regular
+      size_h: 0.016
+      color: muted
+      note: 写在对应项正下方
+    - role: 读数
+      font: JetBrains Mono
+      size_h: 0.05
+      color: ink
+      note: 单位小一号
+    - role: 字幕
+      font: 思源黑体 Medium（斜体感）
+      size_h: 0.028
+      color: ink
+      note: 关键词 highlight
+    - role: 大字
+      font: 思源黑体 Heavy
+      size_h: 0.12
+      color: ink / highlight
+  scale:
+    - 0.016
+    - 0.028
+    - 0.035
+    - 0.04
+    - 0.05
+    - 0.12
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

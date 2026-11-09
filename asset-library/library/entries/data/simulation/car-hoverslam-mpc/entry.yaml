@@ -1,0 +1,53 @@
+id: data.simulation/car-hoverslam-mpc
+type: data.simulation
+version: 0.1.0
+title: 汽车冷气软着陆仿真（MPC）
+summary: 800 kg 小车 80 km/h 冲出 9.2 m 高架，10 个冷气阀门，两种代价下的最优控制。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=56
+    - reference.video/hoverslam-zjucat#t=64
+    - reference.video/hoverslam-zjucat#t=92.5
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:f207e34d578b8a6d58675994246a88e6feebae255340f29ccad2475879675310.jpg
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+  - blob:sha256:da743cbd5463a879a5629c6d3babb1d27f9eb7b4a7b446e126124785ce40b7e5.jpg
+deps: []
+spec:
+  params:
+    mass_kg: 800
+    speed_kmh: 80
+    drop_m: 9.2
+    valves: 10
+    tank_kg: 145.7
+    pressure_mpa: 35
+  channels:
+    - name: t
+      unit: s
+    - name: height
+      unit: m
+    - name: v_down
+      unit: m/s
+    - name: tilt
+      unit: deg
+    - name: valve_1..10
+      unit: 0-1
+    - name: gas_used
+      unit: kg
+  checks:
+    - 方案一用气约 88 kg
+    - 方案二用气约 44 kg
+    - 方案二满推力约在落地前 0.7 s 开始
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,31 @@
+id: effect.dataviz/curve-area-draw
+type: effect.dataviz
+version: 0.1.0
+title: 曲线描画 + 面积填充
+summary: 曲线从左到右画出，超阈值部分面积填充为 warn。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=47
+    - reference.video/hoverslam-zjucat#t=48
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:63b5ec680e751e96f761d795ade12799fe3d1124eca6c5acd049ff6e89dd98a5.jpg
+  - blob:sha256:2b25f1c8654499d72543fe20b35583e789d2c6c52c91709b2dfcf08bf400ebef.jpg
+deps: []
+spec:
+  runtime: svg
+  data_slots:
+    - v(t)
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,35 @@
+{
+  "name": "@asset-library/desktop",
+  "productName": "素材库",
+  "version": "0.1.0",
+  "private": true,
+  "description": "video-harness 素材库桌面应用（macOS）",
+  "author": "video-harness",
+  "type": "module",
+  "main": "dist/electron/main.cjs",
+  "scripts": {
+    "dev:web": "vite",
+    "dev": "node scripts/dev.mjs",
+    "build:renderer": "vite build",
+    "build:electron": "node scripts/build-electron.mjs",
+    "build": "pnpm build:renderer && pnpm build:electron",
+    "dist:mac": "pnpm build && electron-builder --mac --config electron-builder.yml",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "echo 'desktop: UI 由 scripts/screenshot.mjs 做截图回归'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@asset-library/core": "workspace:*",
+    "@types/node": "22.15.30",
+    "@types/react": "19.1.17",
+    "@types/react-dom": "19.1.11",
+    "@vitejs/plugin-react": "6.1.2",
+    "electron": "44.9.3",
+    "electron-builder": "26.18.0",
+    "esbuild": "0.28.2",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "typescript": "5.8.3",
+    "vite": "8.3.5"
+  }
+}

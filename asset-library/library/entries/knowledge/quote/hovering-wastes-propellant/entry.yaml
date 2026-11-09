@@ -1,0 +1,29 @@
+id: knowledge.quote/hovering-wastes-propellant
+type: knowledge.quote
+version: 0.1.0
+title: “每悬停一秒，都是在浪费推进剂”
+summary: Lars Blackmore 文章中的话。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=158
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:03d630a7331736301c18880cb0dffbb33f92d497198b2afc264ea838b3ec20db.jpg
+deps: []
+spec:
+  text: every second spent hovering is wasted propellant
+  translation: 每悬停一秒，都是在浪费推进剂
+  speaker: Lars Blackmore
+  source: knowledge.source/blackmore-2016
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,41 @@
+id: style.grade/sim-explainer-grade
+type: style.grade
+version: 0.1.0
+title: 仿真讲解调色
+summary: 3D 场景明亮自然；黑板场景高对比低饱和；论文段暖纸色；暗场段纯黑强光。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=5
+    - reference.video/hoverslam-zjucat#t=64
+    - reference.video/hoverslam-zjucat#t=146
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:d575a157969a4921acecb36e804c834f1369cd1ea3d87dd08742e8608667793b.jpg
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+deps: []
+spec:
+  targets:
+    - scene: 写实 3D
+      contrast: 中
+      saturation: 自然
+      temperature: 中性偏暖
+    - scene: 黑板
+      contrast: 高
+      saturation: 低（只有语义色饱和）
+    - scene: 论文
+      look: 暖黄纸 + 轻微暗角
+  grain: 0
+  vignette: 0.1
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

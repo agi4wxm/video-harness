@@ -1,0 +1,34 @@
+id: effect.transition/real-to-diagram
+type: effect.transition
+version: 0.1.0
+title: 3D 实景转黑底示意图
+summary: 实景里的车变成半透明，背景淡出为黑板，车落成 2D 示意。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=35
+    - reference.video/hoverslam-zjucat#t=37
+    - reference.video/hoverslam-zjucat#t=39
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:5c5930c1bb5725df47b679794ee0e4f02e38c48bc5a41a8fa1bdeb9a81eb3282.jpg
+  - blob:sha256:0051e690cd40d0d6184d131d6f57cff4161a6cf93d38c5f17c5e9e21f1b3c2b4.jpg
+  - blob:sha256:17af40d4bb52a6619a4a9b3b67af7787548633e405924785acbea726cc7eec33.jpg
+deps: []
+spec:
+  runtime: three+svg
+  duration:
+    - 1
+    - 2
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,27 @@
+id: sound.sfx/car-impact
+type: sound.sfx
+version: 0.1.0
+title: 车辆撞击
+summary: 车辆撞击音效（待分轨确认）
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=25
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:60032bd7f9daf17bf97e08e8ae1ca9f307862d9f386ab6412885f01bd9d26aeb.jpg
+deps: []
+spec:
+  category: impact
+  onset_ms: null
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

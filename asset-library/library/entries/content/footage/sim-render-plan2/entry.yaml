@@ -1,0 +1,31 @@
+id: content.footage/sim-render-plan2
+type: content.footage
+version: 0.1.0
+title: 方案二仿真渲染片段
+summary: 方案二的仿真渲染输出（由 data.simulation 驱动）。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=82
+    - reference.video/hoverslam-zjucat#t=86
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:808c04180cda861b0f7996664b8b442039bdedb88b930360f2fb18d53165781e.jpg
+  - blob:sha256:db406a527675df37d849d3db57993f5aa7c0c13f4d6f8c4c99dd4de8cce66092.jpg
+deps: []
+spec:
+  kind: render
+  duration: 8
+  fps: 30
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

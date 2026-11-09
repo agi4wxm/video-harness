@@ -1,0 +1,31 @@
+id: effect.render3d/exploded-view
+type: effect.render3d
+version: 0.1.0
+title: 爆炸图拆解
+summary: 部件沿各自方向分离，展示内部结构。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=15
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:985ab28e4646971f58b53a703bd1b6174791c43ba919dc13545e2e48451e6e94.jpg
+deps: []
+spec:
+  runtime: three
+  params:
+    spread: 1.5
+  slots:
+    model: content.model3d（需部件拆分）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

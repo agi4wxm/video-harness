@@ -1,0 +1,32 @@
+id: effect.render3d/xray-shell
+type: effect.render3d
+version: 0.1.0
+title: X 光透视
+summary: 外壳变为青色半透明，露出内部气罐与管路。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=14
+    - reference.video/hoverslam-zjucat#t=16
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:b7f5a040fbd3b3584af039d6f72e7ab6e67d8dbcb5cc7cc8ea173e0ca8649d1d.jpg
+  - blob:sha256:41f640b51aae41f59256667727d2246d7f729c29cc9bbc76dd4dd06367b79663.jpg
+deps: []
+spec:
+  runtime: three
+  params:
+    color: xray
+    opacity: 0.25
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

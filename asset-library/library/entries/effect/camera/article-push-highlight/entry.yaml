@@ -1,0 +1,29 @@
+id: effect.camera/article-push-highlight
+type: effect.camera
+version: 0.1.0
+title: 文章截图推镜 + 高亮
+summary: 截图缓慢推近，引用句出现荧光笔高亮。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=155
+    - reference.video/hoverslam-zjucat#t=156
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:ed3b4ca6648bfd24810961f48bcd1542b7e08a611c548a8f6951fa7d14ce747e.jpg
+  - blob:sha256:f13ed4b1655ce05f390c6043bca774c697f7b0aec414f50ee9002c34ed181245.jpg
+deps: []
+spec:
+  runtime: mg
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

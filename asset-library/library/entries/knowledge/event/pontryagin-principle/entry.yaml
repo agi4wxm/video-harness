@@ -1,0 +1,29 @@
+id: knowledge.event/pontryagin-principle
+type: knowledge.event
+version: 0.1.0
+title: 极小值原理提出
+summary: 庞特里亚金等人提出极小值原理（片中写 1956 年）。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=110
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:b6ee8d53c7f79f8ef4426cc8b73abc4324396f9e91c75a1f92948d2bd7dc32b5.jpg
+deps: []
+spec:
+  date: "1956"
+  title: 庞特里亚金极小值原理
+  sources:
+    - 待补充
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

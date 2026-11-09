@@ -1,0 +1,28 @@
+id: content.material/xray-shell
+type: content.material
+version: 0.1.0
+title: X 光青色半透明材质
+summary: 边缘高光的青色半透明材质。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=14
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:b7f5a040fbd3b3584af039d6f72e7ab6e67d8dbcb5cc7cc8ea173e0ca8649d1d.jpg
+deps: []
+spec:
+  kind: shader
+  resolution: n/a
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

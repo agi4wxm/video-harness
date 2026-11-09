@@ -1,0 +1,31 @@
+id: knowledge.fact/last-0-7s
+type: knowledge.fact
+version: 0.1.0
+title: 落地前最后 0.7 秒才满推力
+summary: 方案二的 bang-bang 结构。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=85
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:ec1cf77ba54ddb03428a1c292632a7fd18c46f56d98a87820ba6fcfbeb607522.jpg
+deps: []
+spec:
+  claim: 底部喷口在落地前约 0.7 s 开到最大
+  value: 0.7
+  unit: s
+  sources:
+    - data.simulation/car-hoverslam-mpc
+  confidence: 仿真结果（待复现）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

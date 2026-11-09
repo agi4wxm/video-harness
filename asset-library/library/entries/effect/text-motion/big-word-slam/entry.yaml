@@ -1,0 +1,30 @@
+id: effect.text-motion/big-word-slam
+type: effect.text-motion
+version: 0.1.0
+title: 结论大字砸入
+summary: 黑底上一个大字快速放大到位，点题。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=7
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:67d78a89d3b6be52542cd58348eb9a2f944e78868a5f4e2340785b8e19830dbd.jpg
+deps: []
+spec:
+  runtime: mg
+  params:
+    scale_from: 1.4
+    dur_s: 0.25
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

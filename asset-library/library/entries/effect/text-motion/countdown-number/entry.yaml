@@ -1,0 +1,29 @@
+id: effect.text-motion/countdown-number
+type: effect.text-motion
+version: 0.1.0
+title: 关键数字大字（0.7 秒）
+summary: 大号数字叠在画面左上，带单位。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=84
+    - reference.video/hoverslam-zjucat#t=85
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:2c2dffc66343dda4bd8442055ed90d6f73dfb4e3ad3cc092c6ac197188f786dc.jpg
+  - blob:sha256:ec1cf77ba54ddb03428a1c292632a7fd18c46f56d98a87820ba6fcfbeb607522.jpg
+deps: []
+spec:
+  runtime: mg
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

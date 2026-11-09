@@ -1,0 +1,32 @@
+id: content.ui/github-repo-card
+type: content.ui
+version: 0.1.0
+title: GitHub 仓库卡片
+summary: 仓库名 + 星标数的卡片。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=161
+    - reference.video/hoverslam-zjucat#t=166
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:3fc876231e51b2f03f9e97a3162d98583b2dabc6069228244ee84b3c6f9141d0.jpg
+  - blob:sha256:401c9aefe23ef13c39e63ae9d410ca6e9e27f5aad5c48b5be10dd76f2898c29a.jpg
+deps: []
+spec:
+  kind: card
+  fields:
+    - repo
+    - stars
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

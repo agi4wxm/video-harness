@@ -1,0 +1,31 @@
+id: content.typography/big-word
+type: content.typography
+version: 0.1.0
+title: 大字
+summary: 居中超大字，可带问号强调色。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=7
+    - reference.video/hoverslam-zjucat#t=108
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:67d78a89d3b6be52542cd58348eb9a2f944e78868a5f4e2340785b8e19830dbd.jpg
+  - blob:sha256:2b94319fac4a754942d04dc88990cf73aeebd356c845e371d0a27aea1280f5a1.jpg
+deps: []
+spec:
+  kind: big-word
+  fonts:
+    - 思源黑体 Heavy
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,31 @@
+id: knowledge.concept/switching-function
+type: knowledge.concept
+version: 0.1.0
+title: 开关函数与 bang-bang 控制
+summary: 哈密顿量对控制量线性时，最优控制只取端点。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=139
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:ebff06e679edd45e34081ce5a83e7857bbb126936223895e24ce6ca193c4a0eb.jpg
+deps: []
+spec:
+  term: 开关函数 S(t)
+  explanation: H = S·u + H₀，S>0 时 u=0，S<0 时 u=1；S 单调则最多切换一次。
+  analogies:
+    - 能省就省，最后一刻踩死刹车
+  visual_ideas:
+    - S(t) 直线过零点，下方同步画出 u 从 0 跳到 1
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

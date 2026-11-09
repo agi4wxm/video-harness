@@ -1,0 +1,33 @@
+id: structure.segment/hook-conclusion-first
+type: structure.segment
+version: 0.1.0
+title: 结论先行钩子（约 7 秒）
+summary: 展示'做了很多次'的证据画面 → 抛出反直觉结论 → 一个大字点题
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=5
+    - reference.video/hoverslam-zjucat#t=7
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:d575a157969a4921acecb36e804c834f1369cd1ea3d87dd08742e8608667793b.jpg
+  - blob:sha256:67d78a89d3b6be52542cd58348eb9a2f944e78868a5f4e2340785b8e19830dbd.jpg
+deps: []
+spec:
+  beats:
+    - beat: 展示'做了很多次'的证据画面
+    - beat: 抛出反直觉结论
+    - beat: 一个大字点题
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+release/
+out/
+.DS_Store
+# 素材库中的大文件与派生数据
+library/blobs/
+library/index/
+library/.cache/

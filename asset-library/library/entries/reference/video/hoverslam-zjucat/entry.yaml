@@ -1,0 +1,106 @@
+id: reference.video/hoverslam-zjucat
+type: reference.video
+version: 0.1.0
+title: 《汽车飞出高架，怎样才能软着陆？火箭「自杀式点火」背后的最优控制》
+summary: 仿真驱动的硬核讲解：写实 3D 仿真 + 深色数学黑板 + 数据 HUD + 历史证据链。172 秒，横屏。
+tags:
+  genre:
+    - 硬核讲解
+    - 物理仿真
+    - 最优控制
+  platform:
+    - YouTube
+    - B站
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=11
+    - reference.video/hoverslam-zjucat#t=32
+    - reference.video/hoverslam-zjucat#t=56
+    - reference.video/hoverslam-zjucat#t=85
+    - reference.video/hoverslam-zjucat#t=128
+    - reference.video/hoverslam-zjucat#t=146
+    - reference.video/hoverslam-zjucat#t=158
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:1ca95338d0d8f650b537cbdbe106487ab1d7757746584fe7320401d0db0b5642.jpg
+  - blob:sha256:d9470e0160735b9b2c75f2b47d7d6c5baf365cce189b11c2bf6da7b3784bd619.jpg
+  - blob:sha256:f207e34d578b8a6d58675994246a88e6feebae255340f29ccad2475879675310.jpg
+  - blob:sha256:ec1cf77ba54ddb03428a1c292632a7fd18c46f56d98a87820ba6fcfbeb607522.jpg
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+  - blob:sha256:03d630a7331736301c18880cb0dffbb33f92d497198b2afc264ea838b3ec20db.jpg
+deps: []
+spec:
+  meta:
+    title: 汽车飞出高架，怎样才能软着陆？火箭「自杀式点火」背后的最优控制
+    author: 浙大猫学长
+    url: https://youtu.be/WReBvXwbSt8
+    duration_s: 172
+    resolution: 1920x1080
+    fps: 30
+  metrics:
+    speech_chars: 775
+    chars_per_min_overall: 287
+    chars_per_min_speaking: 335
+    segment_median_s: 2.2
+    montage_cut_s: 0.43
+    cuts_in_pause: 0.41
+    loudness_lufs: -14
+    lra_lu: 3.2
+  segments:
+    - start: 0
+      end: 7.7
+      title: 钩子：结论先行
+      notes: 仿真轨迹叠加 + 计数器 → 暗场实验影像 → 大字「数学」
+    - start: 7.7
+      end: 19.1
+      title: 设定交代（无旁白）
+      notes: 多角度拍照 → 点云重建 → 爆炸图 / X 光 → 35 MPa
+    - start: 19.1
+      end: 27.4
+      title: 提出问题
+      notes: 800 公斤小车 80 km/h 冲出 9 米高架，1.3 秒后砸地
+    - start: 27.4
+      end: 59.6
+      title: 建模
+      notes: 10 个阀门 → 代价 J → 气量约束 → 带约束最优化 → 轨迹族
+    - start: 59.6
+      end: 69.1
+      title: 方案一（保守）
+      notes: MPC：一直托着车，实景仿真 + 侧边 HUD
+    - start: 69.1
+      end: 101
+      title: 转折与方案二
+      notes: 代价加入用气量 → 先自由下坠，最后 0.7 秒满推力 → 44 kg vs 88 kg ×2 → 联想火箭回收
+    - start: 101
+      end: 108
+      title: 音乐蒙太奇
+      notes: 火箭着陆实拍快剪，每镜约 0.43 秒
+    - start: 108
+      end: 145.7
+      title: 为什么（理论）
+      notes: 庞特里亚金极小值原理 → 哈密顿量对 u 线性 → 开关函数过零一次 → bang-bang
+    - start: 145.7
+      end: 159.6
+      title: 历史佐证
+      notes: 1964 Meditch 论文 → 年份刻度 → SpaceX 工程师引用 → 金句
+    - start: 159.6
+      end: 172
+      title: 彩蛋
+      notes: GitHub 开源卡片 + 自由翻滚仿真
+  audio:
+    music: 全程低电平铺底，人声段与非人声段电平几乎相同（-17.9 / -17.7 dB）；无旁白段由音乐撑起，蒙太奇段最响（约 -14 dB）
+    sfx: 撞击、喷气、读数跳动（待分轨确认）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

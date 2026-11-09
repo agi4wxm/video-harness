@@ -1,0 +1,30 @@
+id: content.typography/lower-third
+type: content.typography
+version: 0.1.0
+title: 人名条
+summary: 名字 + 头衔两行，深色底。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=154
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:19e55ba46518dfd5072fae4f802d0494b2491160d8eddca91c28bbee8ce1b1ee.jpg
+deps: []
+spec:
+  kind: lower-third
+  fonts:
+    - Inter Bold
+    - 思源黑体
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

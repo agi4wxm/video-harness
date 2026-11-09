@@ -1,0 +1,39 @@
+id: content.model3d/minicar-teal
+type: content.model3d
+version: 0.1.0
+title: 薄荷色微型车
+summary: 写实微型电动车，内部气罐、阀门、喷口需可拆分。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=12
+    - reference.video/hoverslam-zjucat#t=13
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:96d7e8eae14d42e33b51295b124ebf6219ef41fdc385784e1fddaedd67276c5c.jpg
+  - blob:sha256:bb5c74a495fabc726e7d94e6bdcd10bebcccf4eab55501a4fffcc4b31e53fac9.jpg
+deps: []
+spec:
+  format: glb
+  units: m
+  parts:
+    - body
+    - tank_1..4
+    - valve_1..10
+    - nozzle_bottom
+    - nozzle_side_*
+  materials:
+    - 写实
+    - X 光
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

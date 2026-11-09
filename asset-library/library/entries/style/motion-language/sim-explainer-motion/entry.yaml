@@ -1,0 +1,37 @@
+id: style.motion-language/sim-explainer-motion
+type: style.motion-language
+version: 0.1.0
+title: 仿真讲解动效语言
+summary: 克制：元素淡入加轻微位移，公式逐项追加，数字滚动，几乎不用弹跳。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=44
+    - reference.video/hoverslam-zjucat#t=128
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:c301c7c5b419901ab3e327acdcead43588d8b95eca1a183a6955608baeceb188.jpg
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+deps: []
+spec:
+  durations:
+    enter_s: 0.4
+    formula_term_s: 0.5
+    number_roll_s: 0.8
+  easing: cubic-bezier(0.22,1,0.36,1)
+  stagger_ms: 80
+  principles:
+    - 画面跟旁白走，一句一个变化
+    - 新出现的东西用 highlight 标一次，随后回到 ink
+    - 3D 镜头慢，2D 元素快
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,16 @@
+{
+  "name": "asset-library",
+  "private": true,
+  "type": "module",
+  "description": "video-harness 素材库系统：完备分类、条目档案、内容寻址存储、检索、审查，以及桌面应用。",
+  "packageManager": "pnpm@10.28.0",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "lib": "node packages/cli/bin/lib.mjs",
+    "dev": "pnpm --filter @asset-library/desktop dev",
+    "build": "pnpm --filter @asset-library/desktop build",
+    "dist:mac": "pnpm --filter @asset-library/desktop dist:mac",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  }
+}

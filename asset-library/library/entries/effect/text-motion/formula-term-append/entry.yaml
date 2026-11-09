@@ -1,0 +1,35 @@
+id: effect.text-motion/formula-term-append
+type: effect.text-motion
+version: 0.1.0
+title: 公式逐项追加 + 项下注释
+summary: 公式一项一项出现，新项高亮，中文注释写在项下。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=40
+    - reference.video/hoverslam-zjucat#t=41
+    - reference.video/hoverslam-zjucat#t=42
+    - reference.video/hoverslam-zjucat#t=46
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:e1c575e738ed7fe813e890bdb8847013aeb724f925ea03bcaa6daeb2627203ec.jpg
+  - blob:sha256:2e66eb54aa63bea6411c4515324963bffccd453012f34f4b54663e4129f686a5.jpg
+  - blob:sha256:441eddc067fcf7354217db2ad51dc9183d32176175f0215febcc6fe544797419.jpg
+  - blob:sha256:39e35ee854b56eb261fca7039f61ca423512b38c2f114825fd7e4f79cbce4938.jpg
+deps: []
+spec:
+  runtime: svg+katex
+  params:
+    term_s: 0.5
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

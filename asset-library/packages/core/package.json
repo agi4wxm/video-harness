@@ -1,0 +1,11 @@
+{
+  "name": "@asset-library/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "素材库内核：分类体系、条目档案 schema、文件存储（内容寻址）、校验、索引与检索、审查流程、归类。",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json", "test": "node --import tsx --test test/*.test.ts" },
+  "dependencies": { "minisearch": "7.1.2", "yaml": "2.8.0", "zod": "3.25.76" },
+  "devDependencies": { "@types/node": "22.15.30", "tsx": "4.20.3", "typescript": "5.8.3" }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@asset-library/cli",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "lib": "./bin/lib.mjs" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json", "test": "node --import tsx --test test/*.test.ts" },
+  "dependencies": { "@asset-library/core": "workspace:*", "tsx": "4.20.3" },
+  "devDependencies": { "@types/node": "22.15.30", "typescript": "5.8.3" }
+}

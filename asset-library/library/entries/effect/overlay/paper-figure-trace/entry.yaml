@@ -1,0 +1,29 @@
+id: effect.overlay/paper-figure-trace
+type: effect.overlay
+version: 0.1.0
+title: 论文配图描线
+summary: 在论文原图上用 highlight 描出答案曲线。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=146
+    - reference.video/hoverslam-zjucat#t=147
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+  - blob:sha256:6441e57a97b86e1e05ccae61c4e80a579487eaf88e81cae32f3d10322ce17b67.jpg
+deps: []
+spec:
+  runtime: svg-over-image
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

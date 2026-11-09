@@ -1,0 +1,33 @@
+id: effect.render3d/photo-to-pointcloud
+type: effect.render3d
+version: 0.1.0
+title: 照片 → 点云 → 模型
+summary: 多角度照片飞入，点云聚合，再实体化成模型。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=10
+    - reference.video/hoverslam-zjucat#t=11
+    - reference.video/hoverslam-zjucat#t=12
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:1862540842ddc93a4e4f13284722a714bcc95412495e3f9d372a530a5371306f.jpg
+  - blob:sha256:1ca95338d0d8f650b537cbdbe106487ab1d7757746584fe7320401d0db0b5642.jpg
+  - blob:sha256:96d7e8eae14d42e33b51295b124ebf6219ef41fdc385784e1fddaedd67276c5c.jpg
+deps: []
+spec:
+  runtime: three
+  params:
+    points: 9000
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

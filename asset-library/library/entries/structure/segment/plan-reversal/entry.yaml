@@ -1,0 +1,36 @@
+id: structure.segment/plan-reversal
+type: structure.segment
+version: 0.1.0
+title: 方案一 → 加一项代价 → 方案二反转
+summary: 展示合理但保守的方案 → 公式里加一项 → 新方案做法截然不同 → 量化对比（×2）
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=64
+    - reference.video/hoverslam-zjucat#t=72
+    - reference.video/hoverslam-zjucat#t=85
+    - reference.video/hoverslam-zjucat#t=92.5
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+  - blob:sha256:272b0ab45baefc7c4db64adee24f8a003956be02bd24c26fa6b29d1c28ee5610.jpg
+  - blob:sha256:ec1cf77ba54ddb03428a1c292632a7fd18c46f56d98a87820ba6fcfbeb607522.jpg
+  - blob:sha256:da743cbd5463a879a5629c6d3babb1d27f9eb7b4a7b446e126124785ce40b7e5.jpg
+deps: []
+spec:
+  beats:
+    - beat: 展示合理但保守的方案
+    - beat: 公式里加一项
+    - beat: 新方案做法截然不同
+    - beat: 量化对比（×2）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

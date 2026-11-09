@@ -1,0 +1,31 @@
+id: structure.segment/theory-back-to-sim
+type: structure.segment
+version: 0.1.0
+title: 理论推导后回到仿真验证
+summary: 推出结构性结论 → 画中画回放仿真 → 理论曲线与仿真曲线重合
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=139
+    - reference.video/hoverslam-zjucat#t=141
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:ebff06e679edd45e34081ce5a83e7857bbb126936223895e24ce6ca193c4a0eb.jpg
+  - blob:sha256:2743efdd968e1c682734bdf6380dbfe163ad6b921b19d55c97c3d7f09388c2c7.jpg
+deps: []
+spec:
+  beats:
+    - beat: 推出结构性结论
+    - beat: 画中画回放仿真
+    - beat: 理论曲线与仿真曲线重合
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

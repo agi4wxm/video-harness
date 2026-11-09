@@ -1,0 +1,35 @@
+id: structure.edit/montage-fast-cut
+type: structure.edit
+version: 0.1.0
+title: 快剪蒙太奇
+summary: 无旁白、配乐推高，0.4 秒左右一镜，把理论和现实连接起来。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=101
+    - reference.video/hoverslam-zjucat#t=103
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:1441b9ab21258faf99968e37170776e493ee0f5b057eb95fec1590da63c99845.jpg
+  - blob:sha256:311f1aa7a1525ab537b9c333ed38d9e0b1f42e9797e943c0b9816fb35b5ace39.jpg
+deps: []
+spec:
+  definition: 连续短镜头快速切换
+  constraints:
+    cut_s:
+      - 0.3
+      - 0.6
+    requires:
+      - 配乐推高
+      - 无旁白
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

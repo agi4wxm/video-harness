@@ -1,0 +1,27 @@
+id: sound.voice/explainer-male-zh
+type: sound.voice
+version: 0.1.0
+title: 中文讲解男声
+summary: 理性、偏快（约 335 字/分钟），结论句加重。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: made
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from: []
+  restrictions: []
+files: {}
+previews: []
+deps: []
+spec:
+  provider: elevenlabs
+  voice_id: 待选
+  model: eleven_multilingual_v2
+  pace_cpm: 335
+  sample: null
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

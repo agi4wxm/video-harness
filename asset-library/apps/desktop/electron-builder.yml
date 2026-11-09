@@ -1,0 +1,33 @@
+# macOS 打包配置：pnpm dist:mac → release/
+appId: com.videoharness.assetlibrary
+productName: 素材库
+copyright: Copyright © video-harness
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**/*
+  - package.json
+asar: true
+mac:
+  category: public.app-category.productivity
+  icon: build/icon.icns
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+    - target: zip
+      arch: [arm64, x64]
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  darkModeSupport: true
+  # 签名与公证：设置环境变量 CSC_LINK / CSC_KEY_PASSWORD（Developer ID 证书）
+  # 以及 APPLE_ID / APPLE_APP_SPECIFIC_PASSWORD / APPLE_TEAM_ID 后打开下一行
+  # notarize: true
+dmg:
+  title: 素材库 ${version}
+  window: { width: 560, height: 380 }
+  contents:
+    - { x: 150, y: 190, type: file }
+    - { x: 410, y: 190, type: link, path: /Applications }

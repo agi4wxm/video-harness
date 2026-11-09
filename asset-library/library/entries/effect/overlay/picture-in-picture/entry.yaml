@@ -1,0 +1,29 @@
+id: effect.overlay/picture-in-picture
+type: effect.overlay
+version: 0.1.0
+title: 画中画回放仿真
+summary: 推导画面里嵌入一个小窗回放仿真，与曲线同步。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=139
+    - reference.video/hoverslam-zjucat#t=140
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:ebff06e679edd45e34081ce5a83e7857bbb126936223895e24ce6ca193c4a0eb.jpg
+  - blob:sha256:3c113e4491762f9e3e3747aac433817f1e92d49d2eff4b11ed2d59b352ca321a.jpg
+deps: []
+spec:
+  runtime: compose
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

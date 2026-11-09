@@ -1,0 +1,29 @@
+id: effect.text-motion/subtitle-keyword
+type: effect.text-motion
+version: 0.1.0
+title: 字幕关键词标黄
+summary: 底部字幕中的关键词使用 highlight 色。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=29
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:b542eb88ee189f4bc3070dc7f0492526ec23699d3e0f3e0f95cc61f1a535fe7d.jpg
+deps: []
+spec:
+  runtime: mg
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

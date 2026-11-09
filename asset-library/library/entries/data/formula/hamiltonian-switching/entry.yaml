@@ -1,0 +1,31 @@
+id: data.formula/hamiltonian-switching
+type: data.formula
+version: 0.1.0
+title: 哈密顿量与开关函数
+summary: H 对 u 线性 → 最小值在端点 → bang-bang。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=128
+    - reference.video/hoverslam-zjucat#t=139
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+  - blob:sha256:ebff06e679edd45e34081ce5a83e7857bbb126936223895e24ce6ca193c4a0eb.jpg
+deps: []
+spec:
+  latex: H = S(t)\,u + H_0,\quad u^*=\begin{cases}0 & S>0\\1 & S<0\end{cases}
+  variables:
+    S(t): 开关函数
+    H0: 与 u 无关的项
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,34 @@
+id: effect.dataviz/trajectory-family
+type: effect.dataviz
+version: 0.1.0
+title: 轨迹族展开 + 最优解高亮
+summary: 一族候选轨迹同时展开，超标的标红，最优的标黄。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=55
+    - reference.video/hoverslam-zjucat#t=56
+    - reference.video/hoverslam-zjucat#t=58
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:c1581a0a7d791c3d06fb0add99751343b0ca4764dc5b26a19e06c8ab4db399ba.jpg
+  - blob:sha256:f207e34d578b8a6d58675994246a88e6feebae255340f29ccad2475879675310.jpg
+  - blob:sha256:0e18df5ed3546a5602ba67bf9d87a245af9dcdd9396d0bf5928ef42d4f0b9f51.jpg
+deps: []
+spec:
+  runtime: svg
+  data_slots:
+    - trajectories[]
+    - cost[]
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

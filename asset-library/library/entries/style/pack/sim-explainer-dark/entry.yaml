@@ -1,0 +1,73 @@
+id: style.pack/sim-explainer-dark
+type: style.pack
+version: 0.1.0
+title: 仿真讲解 · 深色数学黑板 + 写实 3D
+summary: 写实 3D 仿真作为证据，深色黑板上推导公式，固定的黄 / 蓝 / 橙语义色，右侧数据 HUD。
+tags:
+  genre:
+    - 硬核讲解
+    - 工程
+    - 数学
+  mood:
+    - 理性
+    - 克制
+    - 科技
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=44
+    - reference.video/hoverslam-zjucat#t=64
+    - reference.video/hoverslam-zjucat#t=128
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:c301c7c5b419901ab3e327acdcead43588d8b95eca1a183a6955608baeceb188.jpg
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+deps:
+  - style.palette/sim-explainer-semantic@0
+  - style.type-system/sim-explainer-type@0
+  - style.layout/sim-explainer-layout@0
+  - style.motion-language/sim-explainer-motion@0
+  - style.grade/sim-explainer-grade@0
+spec:
+  palette: style.palette/sim-explainer-semantic
+  type_system: style.type-system/sim-explainer-type
+  layout: style.layout/sim-explainer-layout
+  motion_language: style.motion-language/sim-explainer-motion
+  grade: style.grade/sim-explainer-grade
+  scene_tones:
+    - name: 写实 3D 仿真
+      use: 提出问题、展示方案、验证结论
+      look: 白天城市、天空光、投影、写实材质
+    - name: 深色数学黑板
+      use: 建模与推导
+      look: "近黑底 #0E1315，白色 LaTeX，黄色强调，中文小字注释在项下"
+    - name: 暗场实验影像
+      use: 开头钩子与情绪高点
+      look: 纯黑、强光、烟雾
+  material_language:
+    - name: X 光壳
+      meaning: 内部结构 / 这是示意
+      look: 青色半透明 + 边缘高光
+    - name: 残影
+      meaning: 很多次模拟
+      look: 低不透明度叠加
+  banned:
+    - 装饰性粒子
+    - 与数据无关的辉光
+    - 彩虹色阶
+    - 无单位的数字
+    - 一屏超过 3 组数字
+  frames: []
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,30 @@
+id: content.image/rocket-landing-dusk
+type: content.image
+version: 0.1.0
+title: 火箭着陆写实画面（待生成）
+summary: 替代实拍蒙太奇：可回收火箭着陆扬尘，泛化外观。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=105
+    - reference.video/hoverslam-zjucat#t=106
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:047c89d0a8d613651ad2e5222751245ad1bdec102d066ae63fe6e347879ce22e.jpg
+  - blob:sha256:b650645e4a116377d28d607b05f24fc2ed1ffa48aa139cd7e85c0e214c9555c3.jpg
+deps: []
+spec:
+  kind: generated
+  dimensions: 1920x1080
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

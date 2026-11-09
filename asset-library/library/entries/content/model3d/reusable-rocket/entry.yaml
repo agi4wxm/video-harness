@@ -1,0 +1,30 @@
+id: content.model3d/reusable-rocket
+type: content.model3d
+version: 0.1.0
+title: 可回收火箭
+summary: 可回收火箭一级（泛化外观，不做成特定品牌）。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=96
+    - reference.video/hoverslam-zjucat#t=105
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:0c6a48e7976c33b058d2a61375bd27b5ad865a583c5909c347994f77f6487798.jpg
+  - blob:sha256:047c89d0a8d613651ad2e5222751245ad1bdec102d066ae63fe6e347879ce22e.jpg
+deps: []
+spec:
+  format: glb
+  units: m
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

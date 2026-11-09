@@ -1,0 +1,32 @@
+id: content.vector/valve-markers
+type: content.vector
+version: 0.1.0
+title: 阀门编号点
+summary: 车身上的阀门位置编号圆点。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=30
+    - reference.video/hoverslam-zjucat#t=31
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:bd536f2b75cb9effefc2d4b84d3645df65bf195229bbe1918df75d4042ed0ea7.jpg
+  - blob:sha256:5d7da063bdd6e2b53f7d3d1bb867a859ff48584b9c8cbb6ff88a68f83bc95a02.jpg
+deps: []
+spec:
+  kind: icon
+  layers:
+    - dot
+    - number
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

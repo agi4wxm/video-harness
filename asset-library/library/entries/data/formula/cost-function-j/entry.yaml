@@ -1,0 +1,35 @@
+id: data.formula/cost-function-j
+type: data.formula
+version: 0.1.0
+title: 代价函数 J（含约束）
+summary: 终端代价 + 过程代价 + 用气量，受气罐容量约束。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=44
+    - reference.video/hoverslam-zjucat#t=49
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:c301c7c5b419901ab3e327acdcead43588d8b95eca1a183a6955608baeceb188.jpg
+  - blob:sha256:e04724b5d9f8ff93726a9ec2ab957437badfe328f6f5e906d54a9e31e0cb63dd.jpg
+deps: []
+spec:
+  latex: \min_{u(t)} J=\Phi(v_T,\theta_T)+\int_0^T \ell(v)\,dt + w\int_0^T \dot m\,dt ;; s.t.; \int_0^T \dot m\,dt\le
+    m_{tank},; u_i(t)\in[0,1]
+  variables:
+    v_T: 触地下落速度
+    theta_T: 触地倾角
+    ℓ(v): 过程中超速代价
+    ṁ: 耗气率
+    u_i: 第 i 个阀门开度
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

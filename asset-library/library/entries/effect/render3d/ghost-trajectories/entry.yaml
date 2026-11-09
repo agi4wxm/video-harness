@@ -1,0 +1,35 @@
+id: effect.render3d/ghost-trajectories
+type: effect.render3d
+version: 0.1.0
+title: 多次仿真残影叠加 + 计数器
+summary: 上百次仿真的车辆以低不透明度叠加，左上计数器滚动，表达'模拟了几百次'。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=2
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:216c7e9b20fd860ea45d30ea825aa65f9915ceca9a278ec568d5a042bbe82c0f.jpg
+deps: []
+spec:
+  runtime: three
+  params:
+    runs: 320
+    opacity: 0.08
+  slots:
+    model: content.model3d
+    data: data.simulation
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

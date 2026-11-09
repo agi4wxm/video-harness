@@ -1,0 +1,31 @@
+id: content.typography/latex-formula
+type: content.typography
+version: 0.1.0
+title: LaTeX 公式样式
+summary: 白色衬线公式，强调项 highlight，项下中文注释。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=44
+    - reference.video/hoverslam-zjucat#t=128
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:c301c7c5b419901ab3e327acdcead43588d8b95eca1a183a6955608baeceb188.jpg
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+deps: []
+spec:
+  kind: formula
+  fonts:
+    - KaTeX
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

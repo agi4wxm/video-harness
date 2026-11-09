@@ -1,0 +1,32 @@
+id: sound.music/tech-bed-low
+type: sound.music
+version: 0.1.0
+title: 低电平科技铺底
+summary: 全程铺底，电平压低，不抢人声。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=8
+    - reference.video/hoverslam-zjucat#t=30
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:2bee18f007dfbc9021cb5f7ad5cde6a78ce8348333a83ce9dc465942cf17f7d0.jpg
+  - blob:sha256:bd536f2b75cb9effefc2d4b84d3645df65bf195229bbe1918df75d4042ed0ea7.jpg
+deps: []
+spec:
+  mood: 理性、悬念
+  bpm: null
+  sections:
+    - 铺底
+  generator: 代码作曲（待实现）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

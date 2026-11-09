@@ -1,0 +1,35 @@
+id: effect.dataviz/valve-heatmap-update
+type: effect.dataviz
+version: 0.1.0
+title: 阀门开度矩阵更新
+summary: 10 个阀门 × 时间的开度热力图随时间点亮。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=31
+    - reference.video/hoverslam-zjucat#t=32
+    - reference.video/hoverslam-zjucat#t=33
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:5d7da063bdd6e2b53f7d3d1bb867a859ff48584b9c8cbb6ff88a68f83bc95a02.jpg
+  - blob:sha256:d9470e0160735b9b2c75f2b47d7d6c5baf365cce189b11c2bf6da7b3784bd619.jpg
+  - blob:sha256:759cdca1fd7cc091f339e832527524edb81d9be47bf39e0966eaafc477db2e82.jpg
+deps: []
+spec:
+  runtime: svg
+  data_slots:
+    - valves[10]
+  params:
+    cell: rounded
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

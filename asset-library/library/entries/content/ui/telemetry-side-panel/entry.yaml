@@ -1,0 +1,33 @@
+id: content.ui/telemetry-side-panel
+type: content.ui
+version: 0.1.0
+title: 侧边遥测面板
+summary: 半透明面板：气罐液位、阀门曲线、下落速度读数。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=64
+    - reference.video/hoverslam-zjucat#t=83
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+  - blob:sha256:5dfebbb7839dac51de1c2ad3386126a8431dbe8ed4af3a15f5752c6b0bf87d4d.jpg
+deps: []
+spec:
+  kind: hud
+  fields:
+    - gas_used_kg
+    - valve_bottom
+    - v_down
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

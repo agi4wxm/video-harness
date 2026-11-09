@@ -1,0 +1,31 @@
+id: content.chart/trajectory-family
+type: content.chart
+version: 0.1.0
+title: 轨迹族坐标图
+summary: 高度-时间坐标中的一族轨迹。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=56
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:f207e34d578b8a6d58675994246a88e6feebae255340f29ccad2475879675310.jpg
+deps: []
+spec:
+  chart_type: multi-line
+  bindings:
+    x: t
+    y: height
+    series: run
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

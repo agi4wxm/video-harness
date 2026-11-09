@@ -1,0 +1,29 @@
+id: effect.element-motion/lower-third-in
+type: effect.element-motion
+version: 0.1.0
+title: 人名条入场
+summary: 名字与头衔分两行滑入。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=153
+    - reference.video/hoverslam-zjucat#t=154
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:448515698d30a97d4e33ca6ba7e3b8327237ec8787c8bf8b9a654fe93f8574cc.jpg
+  - blob:sha256:19e55ba46518dfd5072fae4f802d0494b2491160d8eddca91c28bbee8ce1b1ee.jpg
+deps: []
+spec:
+  runtime: mg
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

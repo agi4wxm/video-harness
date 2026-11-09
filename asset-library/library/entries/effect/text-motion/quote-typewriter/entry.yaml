@@ -1,0 +1,31 @@
+id: effect.text-motion/quote-typewriter
+type: effect.text-motion
+version: 0.1.0
+title: 金句逐字打出 + 关键词变色
+summary: 中文逐字打出，关键词变 warn，下方英文原句淡入。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=157
+    - reference.video/hoverslam-zjucat#t=158
+    - reference.video/hoverslam-zjucat#t=159
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:69eef320c44f5f1d07c1b1bbc6674540f5048d001b7f74ba03dd7bdc97c92874.jpg
+  - blob:sha256:03d630a7331736301c18880cb0dffbb33f92d497198b2afc264ea838b3ec20db.jpg
+  - blob:sha256:e2cfb22c7db71556a96015671660b3bd9b011ae8f797aac7e454dbafd1f94a80.jpg
+deps: []
+spec:
+  runtime: mg
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

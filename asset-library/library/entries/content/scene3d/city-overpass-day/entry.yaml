@@ -1,0 +1,40 @@
+id: content.scene3d/city-overpass-day
+type: content.scene3d
+version: 0.1.0
+title: 白天城市高架
+summary: 城市楼群、高架、斑马线、锥桶，天空光。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=17
+    - reference.video/hoverslam-zjucat#t=22
+    - reference.video/hoverslam-zjucat#t=64
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:df9d4b1ef718504b026b5000694a585e15104b7780322e79e362feaf64bc50b7.jpg
+  - blob:sha256:97720f3358049f6d220a8ca1556e53ce0d55b6564fe895a692757d9734ddc23e.jpg
+  - blob:sha256:d7ffb2a1cb2e5ab62cfa6cccc7e095729a85a9b079f92f94c370d78ef2efb981.jpg
+deps: []
+spec:
+  placements:
+    - 高架
+    - 道路
+    - 楼群
+    - 锥桶
+  lighting: 天空光 + 太阳投影
+  cameras:
+    - 高架侧面俯拍
+    - 桥下仰拍
+    - 车尾跟拍
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

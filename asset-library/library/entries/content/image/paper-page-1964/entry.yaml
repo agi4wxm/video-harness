@@ -1,0 +1,28 @@
+id: content.image/paper-page-1964
+type: content.image
+version: 0.1.0
+title: 1964 年论文页面（自排版）
+summary: 论文版面与配图，按原文重新排版，不直接使用扫描件。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=146
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+deps: []
+spec:
+  kind: typeset
+  dimensions: 2480x3508
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

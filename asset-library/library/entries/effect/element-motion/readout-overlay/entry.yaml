@@ -1,0 +1,31 @@
+id: effect.element-motion/readout-overlay
+type: effect.element-motion
+version: 0.1.0
+title: 读数与计时器叠加
+summary: 速度、时间读数随仿真实时变化，等宽数字滚动。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=19
+    - reference.video/hoverslam-zjucat#t=25
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:9bd9f96167af5140dc553f72518ae162a10f750a9356139c5df57cc3573105c8.jpg
+  - blob:sha256:60032bd7f9daf17bf97e08e8ae1ca9f307862d9f386ab6412885f01bd9d26aeb.jpg
+deps: []
+spec:
+  runtime: svg
+  params:
+    decimals: 2
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

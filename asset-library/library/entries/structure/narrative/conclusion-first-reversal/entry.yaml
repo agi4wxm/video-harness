@@ -1,0 +1,62 @@
+id: structure.narrative/conclusion-first-reversal
+type: structure.narrative
+version: 0.1.0
+title: 结论先行 · 反转 · 理论 · 佐证
+summary: 硬核讲解骨架：先给结论吊胃口，再建模、给出保守方案，加一个条件后反转，最后用理论和历史证明。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=1
+    - reference.video/hoverslam-zjucat#t=69
+    - reference.video/hoverslam-zjucat#t=108
+    - reference.video/hoverslam-zjucat#t=146
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:56eba7745f1255b30b380362e692eac999f519e025cb45eca58a016dfb6c3e10.jpg
+  - blob:sha256:b967fb6c33b8142f41d0fa0a8abe7f726a8006fb7c441d8c577c2b944a845422.jpg
+  - blob:sha256:2b94319fac4a754942d04dc88990cf73aeebd356c845e371d0a27aea1280f5a1.jpg
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+deps: []
+spec:
+  sections:
+    - name: 钩子
+      ratio: 0.045
+      purpose: 结论先行，制造反差
+    - name: 设定
+      ratio: 0.065
+      purpose: 交代实验对象（可无旁白）
+    - name: 问题
+      ratio: 0.05
+      purpose: 具体数字描述困境
+    - name: 建模
+      ratio: 0.19
+      purpose: 把直觉翻译成可计算的问题
+    - name: 方案一
+      ratio: 0.055
+      purpose: 合理但保守
+    - name: 反转
+      ratio: 0.185
+      purpose: 加一项条件，做法彻底改变
+    - name: 蒙太奇
+      ratio: 0.04
+      purpose: 与现实连接，情绪推高
+    - name: 理论
+      ratio: 0.22
+      purpose: 为什么是这个结构
+    - name: 佐证
+      ratio: 0.08
+      purpose: 历史与权威
+    - name: 彩蛋
+      ratio: 0.07
+      purpose: 开源 / 互动
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

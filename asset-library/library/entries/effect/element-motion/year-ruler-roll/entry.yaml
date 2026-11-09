@@ -1,0 +1,32 @@
+id: effect.element-motion/year-ruler-roll
+type: effect.element-motion
+version: 0.1.0
+title: 年份刻度尺滚动
+summary: 年份数字滚动，下面刻度尺平移。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=150.5
+    - reference.video/hoverslam-zjucat#t=151
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:9481dfbb0188376c569126a188ccfa2ff80c703069906d129708cb3c1cd960a4.jpg
+  - blob:sha256:c4a33f6adc12fcfd620d82947ff5a47414931759803233c2cac48d4c72492184.jpg
+deps: []
+spec:
+  runtime: mg
+  params:
+    from: 1964
+    to: 2016
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

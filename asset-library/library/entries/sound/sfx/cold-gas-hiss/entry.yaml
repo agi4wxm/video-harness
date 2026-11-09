@@ -1,0 +1,27 @@
+id: sound.sfx/cold-gas-hiss
+type: sound.sfx
+version: 0.1.0
+title: 冷气喷射
+summary: 冷气喷射音效（待分轨确认）
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=41.5
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:3a2ca320ebd18c2e81bb652ca64e920c5fb75b1ed041b61f97e303c53bd523fa.jpg
+deps: []
+spec:
+  category: air
+  onset_ms: null
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

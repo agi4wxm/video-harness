@@ -1,0 +1,33 @@
+id: content.chart/valve-heatmap
+type: content.chart
+version: 0.1.0
+title: 阀门开度热力图
+summary: 阀门 × 时间的开度矩阵。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=32
+    - reference.video/hoverslam-zjucat#t=50
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:d9470e0160735b9b2c75f2b47d7d6c5baf365cce189b11c2bf6da7b3784bd619.jpg
+  - blob:sha256:6f55cfa14baa994a53854e7802add467c6677934d152681c4c82a5d4f9182d88.jpg
+deps: []
+spec:
+  chart_type: heatmap
+  bindings:
+    x: time
+    y: valve
+    color: opening
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

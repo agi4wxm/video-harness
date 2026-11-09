@@ -1,0 +1,39 @@
+id: structure.segment/evidence-chain
+type: structure.segment
+version: 0.1.0
+title: 人物 + 论文 + 年份 + 原话的证据链
+summary: 提出者与年份 → 论文原图描线 → 年份滚动跨越 → 现代人物引用 → 原话金句
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=110
+    - reference.video/hoverslam-zjucat#t=146
+    - reference.video/hoverslam-zjucat#t=151
+    - reference.video/hoverslam-zjucat#t=155
+    - reference.video/hoverslam-zjucat#t=158
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:b6ee8d53c7f79f8ef4426cc8b73abc4324396f9e91c75a1f92948d2bd7dc32b5.jpg
+  - blob:sha256:a597ff2afd3009782c8db5dd84b40a515844382a19b2335455786e7ad7fc68c5.jpg
+  - blob:sha256:c4a33f6adc12fcfd620d82947ff5a47414931759803233c2cac48d4c72492184.jpg
+  - blob:sha256:ed3b4ca6648bfd24810961f48bcd1542b7e08a611c548a8f6951fa7d14ce747e.jpg
+  - blob:sha256:03d630a7331736301c18880cb0dffbb33f92d497198b2afc264ea838b3ec20db.jpg
+deps: []
+spec:
+  beats:
+    - beat: 提出者与年份
+    - beat: 论文原图描线
+    - beat: 年份滚动跨越
+    - beat: 现代人物引用
+    - beat: 原话金句
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

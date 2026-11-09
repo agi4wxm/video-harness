@@ -1,0 +1,52 @@
+id: style.palette/sim-explainer-semantic
+type: style.palette
+version: 0.1.0
+title: 仿真讲解语义色板
+summary: 颜色只表达含义：黄=关注 / 最优，浅蓝=对照，橙=超标 / 代价。取色自参考片。
+tags: {}
+styles: []
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=56
+    - reference.video/hoverslam-zjucat#t=92.5
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:f207e34d578b8a6d58675994246a88e6feebae255340f29ccad2475879675310.jpg
+  - blob:sha256:da743cbd5463a879a5629c6d3babb1d27f9eb7b4a7b446e126124785ce40b7e5.jpg
+deps: []
+spec:
+  colors:
+    - token: board
+      hex: "#0E1315"
+      meaning: 数学黑板底色
+    - token: ink
+      hex: "#EDEDEA"
+      meaning: 正文与公式
+    - token: muted
+      hex: "#8A9298"
+      meaning: 注释、坐标轴
+    - token: highlight
+      hex: "#E9BA42"
+      meaning: 当前关注 / 最优解 / 方案二
+    - token: compare
+      hex: "#78C8E8"
+      meaning: 对照组 / 方案一
+    - token: warn
+      hex: "#F4692E"
+      meaning: 超标 / 代价 / 警示
+    - token: xray
+      hex: "#7FD3E6"
+      meaning: X 光壳（目测）
+    - token: panel
+      hex: "#1A1F24"
+      meaning: HUD 面板底（约 60% 不透明）
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09

@@ -1,0 +1,33 @@
+id: content.vector/vehicle-side-diagram
+type: content.vector
+version: 0.1.0
+title: 车辆侧视示意图
+summary: 扁平半透明车辆侧视图，配受力与速度箭头。
+tags: {}
+styles:
+  - style.pack/sim-explainer-dark
+status: draft
+provenance:
+  kind: decomposed
+  source: 拆解自参考视频（浙大猫学长）
+  derived_from:
+    - reference.video/hoverslam-zjucat#t=39
+    - reference.video/hoverslam-zjucat#t=128
+  restrictions:
+    - internal-reference
+files: {}
+previews:
+  - blob:sha256:17af40d4bb52a6619a4a9b3b67af7787548633e405924785acbea726cc7eec33.jpg
+  - blob:sha256:972f619d0174a8cdf7d914fe37116f2ff7c8fb25162fcd042bf88342f277c0a3.jpg
+deps: []
+spec:
+  kind: diagram
+  layers:
+    - body
+    - arrows
+    - labels
+usage:
+  projects: []
+  count: 0
+created: 2026-11-09
+updated: 2026-11-09
