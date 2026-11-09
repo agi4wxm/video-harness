@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "approved": false,
+  "semantic": {},
+  "motifs": [],
+  "captions": { "enabled": false },
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 3,
+      "chapter": "day",
+      "scene": { "kind": "kit", "kit": "kit/title-card", "params": { "kicker": "VIDEO-HARNESS", "title": "Replace me" } },
+      "beats": [{ "t": 0, "idea": "title card names the question", "line": "" }]
+    }
+  ]
+}

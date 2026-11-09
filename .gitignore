@@ -1,12 +1,14 @@
-# 大文件与派生数据（见 docs/00-architecture.md §7）
-analysis/**/videos/
-projects/
-blobs/
-cache/
 node_modules/
 dist/
+.venv/
 __pycache__/
 *.pyc
-.venv/
-library/node_modules
-engine/.cache/
+.pytest_cache/
+# 渲染与分析的派生数据
+**/renders/
+**/public/vh/
+**/.vh/
+analysis-out/
+eval/synthetic/out/
+cache/
+*.egg-info/

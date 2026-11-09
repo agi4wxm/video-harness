@@ -1,66 +1,61 @@
 # video-harness
 
-面向**口播 MG 视频**的视频制作 harness：以代码生成视频为主（3D 场景、数据可视化、各类 MG 效果），少量镜头调用生成式模型 API；能力通过 **MCP** 暴露，不绑定任何一家 agent。
+用**代码**做讲解视频的 harness：横屏 MG / 插画科普，画面全部由 `seek(t)` 确定性渲染，配音用 ElevenLabs，不使用生成式视频。
 
-## 核心问题
-
-harness 的价值集中在两件事上，它们是同一个闭环的两端：
-
-1. **参考分析** —— 从别人的好视频里提取可借鉴、可执行的东西，并能评估提取得对不对。见 [docs/01-reference-analysis.md](docs/01-reference-analysis.md)。
-2. **质量规范** —— 把"高质量"量化为可校验的规范，并让 agent 稳定达到。见 [docs/02-quality-spec.md](docs/02-quality-spec.md)。
+**形态**：一个给 agent 用的 skill + 一个确定性 CLI（`vh`）+ 一组项目文件约定。创意交给 agent，流程顺序、闸门和质量判定写在 `vh` 里；MCP 只是给没有 shell 的客户端的薄适配器。
 
 ```
-参考视频集 ──分析──▶ reference-profile（分布）+ 配方卡片 + 复刻积木
-                          │
-                          ▼
-             质量规范 = 硬约束 + 落在参考区间内的指标 + 评判清单
-                          │
-                          ▼
-    agent 生成 ──测量──▶ 评分卡（与参考的差距）──▶ 修复 / 人工 A/B ──▶ 修订规范
+参考视频 ──拆（rea-video + vh_analyze）──▶ 简报 ⟂ ──▶ 文案 ──▶ 配音（ElevenLabs）
+                                                                   │
+            ┌──────────────────────────────────────────────────────┘
+            ▼
+     节拍分镜 ⟂（每拍先写视觉想法）──▶ 镜头：积木 / 本地场景图 / html / react
+            │                                   │
+            ▼                                   ▼
+     vh check（时间覆盖、确定性、安全区、重叠、字号、对比度、僵帧……直接读场景图）
+            │
+            ▼
+     预览 ──▶ 看图复核（tasks / answers，≤3 轮）──▶ 成片（规格 + 响度）──▶ 再拆比对（诊断）
+                                                    ⟂ = 人工确认
 ```
 
-分析参考视频和检测自己的成片**使用同一套测量代码**，两边的数字才能直接比较。
+## 快速开始
 
-## 已确定的技术决策
+```bash
+bash scripts/install_skill.sh        # 依赖 + vh 命令 + Python 分析环境 + skill 链接
+vh new my-video && cd my-video
+vh status                            # 每一步都先看这个
+```
 
-| 决策 | 选择 | 理由 |
-|---|---|---|
-| 渲染引擎 | Remotion（唯一） | `@remotion/three` 做确定性 3D；React + d3 做数据可视化；TS 类型检查可作第一道关卡；所有镜头放在同一工程、共用 theme，风格一致；`@remotion/renderer` 可在 Node 中直接调用 |
-| 对外接口 | MCP Server（TypeScript） | 不绑定 agent；工作流说明、规范通过 MCP prompts/resources 暴露；截图以 image content 返回，供任意能看图的模型评审 |
-| 职责划分 | 创意交给 agent，流程与质量判定写在代码里 | 只靠 prompt 调度的流水线不可复现、难以续跑 |
-| 生成式镜头 | 少量，作为素材嵌入时间轴 | 预算闸门 + 内容哈希缓存 + 来源记录 |
-| 素材复用 | 统一素材库：媒体、代码组件、预设、手法、范例同一套清单 | 分析结果和好镜头都能沉淀回库，按使用数据分级 |
-| 测量与音频 | Python 子进程（JSON 进 / JSON 出） | 切点、OCR、ASR、光流等工具集中在 Python 生态；不常驻，靠缓存 |
+对 agent 说"用 video-harness 做一条讲解 X 的视频"，它会按 [skills/video-harness/SKILL.md](skills/video-harness/SKILL.md) 走完流程。示例项目：[examples/sky-blue](examples/sky-blue/)（34 秒，包含积木、本地场景图、html 镜头三种画面）。
+
+## 仓库结构
+
+| 路径 | 内容 |
+|---|---|
+| `skills/video-harness/` | 给 agent 的 skill：流程 + 按需读取的 references（简报、配音、分镜、积木、镜头约定、设计体系、质量、复核、拆参考、反廉价、品味） |
+| `packages/core/` | 纯函数内核：场景图类型、设计包、动效数学（缓动 / 弹簧闭式解 / 眨眼呼吸）、5 个积木、项目文件 schema、inspect 与版面校验。不依赖浏览器 |
+| `packages/runtime/` | Remotion 合成器：统一的场景图 → SVG 渲染器、转场、html 镜头视频、配音与配乐（ducking）、Node 端渲染 |
+| `packages/cli/` | `vh`：new / status / check / voice / build / stills / render / review / compare / kits / eval |
+| `packages/mcp/` | 薄 MCP 适配器：工具一一对应 `vh` 命令 |
+| `analyze/` | Python 分析层（rea-video 之上）：版式感知切镜、视觉节拍、旁白锚定、调色板、多片聚合、合成集打分 |
+| `examples/` | 示例项目 |
+| `eval/` | 合成评测集（真值来自场景图）、反面样本、`RESULTS.md` |
+| `docs/` | 给人看的文档：架构、决策记录、路线图；`docs/dev/` 是开发文档 |
 
 ## 文档
 
-- [docs/00-architecture.md](docs/00-architecture.md) —— 整体架构：分层、中间表示、状态机、分镜格式、仓库结构、构建顺序
-- [docs/01-reference-analysis.md](docs/01-reference-analysis.md) —— 参考视频分析：提取什么、怎么提取、怎么评估
-- [docs/02-quality-spec.md](docs/02-quality-spec.md) —— 质量规范：硬约束、工艺指标、评判清单，以及如何让 agent 达到
-- [docs/03-asset-library.md](docs/03-asset-library.md) —— 素材库：五大类素材、统一清单、入库处理、沉淀与分级、剪辑手法的表达与校验
-- [docs/04-rea-video-review.md](docs/04-rea-video-review.md) —— rea-video 评估：值得沿用的做法、在三类视频上的实测、可以做得更好的 9 个方向与落地方式
+- [docs/architecture.md](docs/architecture.md)：分层、文件约定、场景图、状态推导、进程模型
+- [docs/decisions.md](docs/decisions.md)：关键决策与理由（为什么是 skill + CLI、为什么不靠统计区间、为什么纯代码）
+- [docs/roadmap.md](docs/roadmap.md)：已完成与待做
+- [docs/dev/kits.md](docs/dev/kits.md)：怎么写积木 · [docs/dev/evaluation.md](docs/dev/evaluation.md)：评测纪律
 
-## 进展
-
-| 阶段 | 状态 | 产物 |
-|---|---|---|
-| 1. 测量内核 + 参考分析 | ✅ v0 | `measure/`、`server/`（MCP）、[analysis/chaping/REPORT.md](analysis/chaping/REPORT.md)、`analysis/chaping/reference-profile.json` |
-| 2. 素材库最小版 + 引擎最小版 | ✅ v0 | `library/`（12 个素材：3 积木、版式、2 预设、2 转场、字体、图片）、`engine/`（Remotion runtime）、[examples/battery-80](examples/battery-80/README.md) |
-| 3. 编排内核 + 生成流水线（TTS、状态机、闸门） | 待开始 | |
-
-### 运行 MCP server
+## 开发
 
 ```bash
-pip install -e measure[openai]
-(cd engine && npm install && npm run index)
-(cd server && npm install && npm run build)
+pnpm install
+pnpm typecheck && pnpm test                         # 四个包
+analyze/.venv/bin/python -m pytest -q analyze/tests
 ```
 
-在 MCP 客户端中配置：`{"command": "node", "args": ["<repo>/server/dist/index.js"]}`。
-
-| 分组 | 工具 |
-|---|---|
-| 参考分析 | `video_analyze`、`analysis_list`、`analysis_sheet`、`segments_label`、`profile_build`；prompt `analyze-references` |
-| 素材库 | `asset_search`、`asset_get`、`asset_preview`、`asset_use` |
-| 项目与渲染 | `project_init`、`storyboard_validate`、`render_stills`、`render_video` |
-| 长任务 | `job_status`、`job_wait` |
+参考与致谢：[rea-video](https://github.com/JuneYaooo/rea-video)（分析底座与复核协议，Apache-2.0）、create-vibe-motion（timeline / Scene 分离）、awesome-opus5-5-videos（简报格式、`seek(t)` 约定、禁用清单）、auto-motion（每镜独立执行约定、端到端客观校验）。

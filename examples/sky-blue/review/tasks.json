@@ -1,0 +1,416 @@
+{
+  "instructions": "逐条看 image，只按画面作答；不要看代码和创作过程。每个 fail 都要在 issues 里写：t · 位置 · 问题 → 改法 · 保留什么。",
+  "sheet": "review/stills/sheet.png",
+  "tasks": [
+    {
+      "id": "s01#0",
+      "shot": "s01",
+      "t": 1.2,
+      "beat": {
+        "t": 0,
+        "line": "Look up on a clear day, and the sky is blue.",
+        "idea": "a kid on a green hill looks up at a wide blue sky",
+        "motif": "sun",
+        "focal": "the blue sky"
+      },
+      "scene": "kit/character-scene",
+      "image": "review/stills/t1_20.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s01#1",
+      "shot": "s01",
+      "t": 4.15,
+      "beat": {
+        "t": 2.95,
+        "line": "But sunlight is white.",
+        "idea": "the sun is pure white; kid looks surprised — the contradiction",
+        "focal": "white sun"
+      },
+      "scene": "kit/character-scene",
+      "image": "review/stills/t4_15.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s02#0",
+      "shot": "s02",
+      "t": 6.7,
+      "beat": {
+        "t": 5.5,
+        "line": "So where does the blue come from?",
+        "idea": "the question as a chapter card, blue orbs drifting",
+        "focal": "title"
+      },
+      "scene": "kit/title-card",
+      "image": "review/stills/t6_70.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s03#0",
+      "shot": "s03",
+      "t": 9.48,
+      "beat": {
+        "t": 8.28,
+        "line": "Zoom into the air, and you find tiny molecules of nitrogen and oxygen.",
+        "idea": "one continuous zoom: sky → a pocket of air → a single molecule",
+        "motif": "molecule",
+        "focal": "the molecule"
+      },
+      "scene": "kit/scale-zoom",
+      "image": "review/stills/t9_48.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s04#0",
+      "shot": "s04",
+      "t": 14.59,
+      "beat": {
+        "t": 13.39,
+        "line": "When sunlight hits them, it bounces off in every direction.",
+        "idea": "a white beam hits the molecule and sprays light in all directions",
+        "motif": "molecule",
+        "focal": "the molecule"
+      },
+      "scene": "local:shots/scatter.ts",
+      "image": "review/stills/t14_59.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s04#1",
+      "shot": "s04",
+      "t": 18.42,
+      "beat": {
+        "t": 17.22,
+        "line": "Blue light bounces about five times more than red.",
+        "idea": "most sprayed rays are blue, a few red ones keep going straight; counters blue ×5 / red ×1",
+        "focal": "blue ×5"
+      },
+      "scene": "local:shots/scatter.ts",
+      "image": "review/stills/t18_42.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s05#0",
+      "shot": "s05",
+      "t": 22.38,
+      "beat": {
+        "t": 21.18,
+        "line": "So wherever you look, scattered blue light is coming at you.",
+        "idea": "sun → air → your eyes; only blue particles flow into the eye",
+        "motif": "sun",
+        "focal": "blue flow into the eye"
+      },
+      "scene": "kit/process-diagram",
+      "image": "review/stills/t22_38.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s06#0",
+      "shot": "s06",
+      "t": 26.66,
+      "beat": {
+        "t": 25.46,
+        "line": "At sunset, light crosses much more air.",
+        "idea": "the sun sinks; the dashed light path to the viewer gets long",
+        "motif": "sun",
+        "focal": "the long light path"
+      },
+      "scene": "html:shots/sunset/index.html",
+      "image": "review/stills/t26_66.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    },
+    {
+      "id": "s06#1",
+      "shot": "s06",
+      "t": 30.07,
+      "beat": {
+        "t": 28.87,
+        "line": "The blue is scattered away before it reaches you, and only the reds are left.",
+        "idea": "the sky drains from blue to orange-red, the sun turns red",
+        "focal": "red sun"
+      },
+      "scene": "html:shots/sunset/index.html",
+      "image": "review/stills/t30_07.png",
+      "questions": [
+        {
+          "id": "J1",
+          "q": "第一眼看到的是不是声明的 focal / idea 里的主体？",
+          "severity": "P0"
+        },
+        {
+          "id": "J2",
+          "q": "声明的视觉想法（idea）在画面里能认出来吗？",
+          "severity": "P0"
+        },
+        {
+          "id": "J3",
+          "q": "画面和这一拍的旁白（line）说的是同一件事吗？",
+          "severity": "P1"
+        },
+        {
+          "id": "J4",
+          "q": "有没有与内容无关、在抢焦点的装饰？",
+          "severity": "P1"
+        },
+        {
+          "id": "J5",
+          "q": "看起来廉价吗（对照 references/anti-cheap.md：灰暗、全是字、界面感、模板感、过度辉光）？",
+          "severity": "P1"
+        },
+        {
+          "id": "J6",
+          "q": "与前后节拍在色彩、运动方向、焦点位置上衔接吗？",
+          "severity": "P2"
+        }
+      ]
+    }
+  ]
+}

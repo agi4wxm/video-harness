@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- html 镜头示例：Canvas 2D，实现 window.__vh 约定。vh build 会传入 ?w=&h=&fps=&duration=。 -->
+<html><head><meta charset="utf-8"><style>html,body{margin:0;background:#1E1546}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script>
+  const q = new URLSearchParams(location.search);
+  const W = +q.get("w") || 1920, H = +q.get("h") || 1080;
+  const c = document.getElementById("c"); c.width = W; c.height = H;
+  const g = c.getContext("2d");
+  // 带种子的随机数：不许用 Math.random
+  function rng(seed) { return () => { seed = (seed + 0x6d2b79f5) | 0; let r = Math.imul(seed ^ (seed >>> 15), 1 | seed); r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r; return ((r ^ (r >>> 14)) >>> 0) / 4294967296; }; }
+  const R = rng(7), stars = Array.from({ length: 120 }, () => ({ x: R() * W, y: R() * H, r: 1 + R() * 2.5, ph: R() * 6.28 }));
+  function draw(t) {
+    g.fillStyle = "#1E1546"; g.fillRect(0, 0, W, H);
+    for (const s of stars) { g.globalAlpha = 0.4 + 0.6 * (0.5 + 0.5 * Math.sin(t * 2 + s.ph)); g.fillStyle = "#B58CFF"; g.beginPath(); g.arc(s.x, s.y, s.r, 0, 6.283); g.fill(); }
+    g.globalAlpha = 1;
+    const k = Math.min(1, t / 1.2), r = H * 0.18 * (1 - Math.pow(1 - k, 3));
+    g.shadowColor = "#52E3A0"; g.shadowBlur = 60; g.fillStyle = "#52E3A0";
+    g.beginPath(); g.arc(W / 2, H / 2, r, 0, 6.283); g.fill(); g.shadowBlur = 0;
+  }
+  window.__vh = {
+    isReady: () => true,
+    seek: (t) => draw(t),
+    inspect: (t) => [{ type: "ellipse", id: "planet", x: W / 2 - H * 0.18, y: H / 2 - H * 0.18, w: H * 0.36, h: H * 0.36, role: "focal", opacity: 1 }],
+  };
+</script></body></html>

@@ -1,0 +1,15 @@
+{
+  "name": "@video-harness/mcp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "薄 MCP 适配器：每个工具调用一条 vh 命令；截图以 image content 返回；长任务走 job。不含任何业务逻辑。",
+  "bin": { "video-harness-mcp": "./bin/mcp.mjs" },
+  "scripts": { "typecheck": "tsc -p tsconfig.json", "test": "node --import tsx --test test/*.test.ts" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "tsx": "4.20.3",
+    "zod": "3.25.76"
+  },
+  "devDependencies": { "@types/node": "22.15.30", "typescript": "5.8.3" }
+}
